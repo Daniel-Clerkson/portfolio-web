@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Jane Doe — Futurist &amp; Digital Architect</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;700;800;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet"/>
+<script>
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "background-light": "#ffffff",
+              "background-dark": "#000000",
+              "text-light": "#0a0a0a",
+              "text-dark": "#f5f5f5",
+              "subtle-light": "#f5f5f5",
+              "subtle-dark": "#1a1a1a",
+              "border-light": "#e5e5e5",
+              "border-dark": "#262626",
+              "neon-cyan": "#00ffff",
+            },
+            fontFamily: {
+              "display": ["Manrope", "sans-serif"]
+            },
+            borderRadius: {"DEFAULT": "0.5rem", "lg": "0.75rem", "xl": "1rem", "full": "9999px"},
+            boxShadow: {
+              'neon-cyan': '0 0 5px #00ffff, 0 0 10px #00ffff, 0 0 20px #00ffff',
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings:
+            'FILL' 0,
+            'wght' 300,
+            'GRAD' 0,
+            'opsz' 24
+        }
+        .net-grid-light {
+            background-image:
+                linear-gradient(to right, #e5e5e5 1px, transparent 1px),
+                linear-gradient(to bottom, #e5e5e5 1px, transparent 1px);
+            background-size: 3rem 3rem;
+        }
+        .dark .net-grid-dark {
+            background-image:
+                linear-gradient(to right, #262626 1px, transparent 1px),
+                linear-gradient(to bottom, #262626 1px, transparent 1px);
+            background-size: 3rem 3rem;
+        }
+        .glassy-card {
+            background-color: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+        }
+        .dark .glassy-card-dark {
+             background-color: rgba(26, 26, 26, 0.2);
+             border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        .light .glassy-card-light {
+            background-color: rgba(245, 245, 245, 0.5);
+            border: 1px solid #e5e5e5;
+        }
+    </style>
+</head>
+<body class="font-display bg-background-light dark:bg-background-dark text-text-light dark:text-text-dark antialiased">
+<div class="relative w-full flex flex-col group/design-root overflow-x-hidden">
+<div class="layout-container flex h-full grow flex-col">
+<div class="px-4 sm:px-10 md:px-20 lg:px-40 flex flex-1 justify-center py-5">
+<div class="layout-content-container flex flex-col max-w-[1100px] flex-1">
+<header class="flex items-center justify-between whitespace-nowrap border-b border-solid border-border-light dark:border-border-dark px-0 sm:px-4 py-6">
+<div class="flex items-center gap-4">
+<div class="size-6 text-text-light dark:text-text-dark">
+<svg fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+<path d="M12 21V3M3 12h18" stroke-linecap="round" stroke-linejoin="round"></path>
+<path d="M3 3l18 18M3 21L21 3" stroke-linecap="round" stroke-linejoin="round"></path>
+</svg>
+</div>
+<h2 class="text-xl font-bold leading-tight tracking-[-0.015em]">JD</h2>
+</div>
+<div class="flex flex-1 justify-end items-center gap-4 sm:gap-6">
+<nav class="hidden sm:flex items-center gap-8">
+<a class="text-sm font-medium leading-normal text-text-light/70 dark:text-text-dark/70 hover:text-text-light dark:hover:text-text-dark transition-colors" href="#work">Work</a>
+<a class="text-sm font-medium leading-normal text-text-light/70 dark:text-text-dark/70 hover:text-text-light dark:hover:text-text-dark transition-colors" href="#about">About</a>
+<a class="text-sm font-medium leading-normal text-text-light/70 dark:text-text-dark/70 hover:text-text-light dark:hover:text-text-dark transition-colors" href="#contact">Contact</a>
+</nav>
+<button class="flex items-center justify-center rounded-full h-10 w-10 text-text-light/80 dark:text-text-dark/80 hover:bg-subtle-light dark:hover:bg-subtle-dark transition-colors">
+<span class="material-symbols-outlined text-2xl">dark_mode</span>
+</button>
+</div>
+</header>
+<main class="mt-16">
+<section class="relative py-24 sm:py-32 overflow-hidden">
+<div class="absolute inset-0 net-grid-light net-grid-dark z-0"></div>
+<div class="relative z-10 flex flex-col items-center justify-center text-center gap-8 px-4">
+<h1 class="text-5xl font-black leading-tight tracking-tighter sm:text-7xl md:text-8xl">
+                                Futurist &amp; Digital Architect
+                            </h1>
+<p class="max-w-2xl text-lg sm:text-xl text-text-light/80 dark:text-text-dark/80">
+                                I design and build next-generation digital experiences, merging minimalist aesthetics with user-centric functionality.
+                            </p>
+<div class="flex gap-4 mt-6">
+<a class="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-12 px-6 bg-text-light dark:bg-text-dark text-background-light dark:text-background-dark text-base font-bold leading-normal tracking-wide hover:opacity-90 transition-opacity" href="#work">
+<span class="truncate">View My Work</span>
+</a>
+<a class="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-12 px-6 text-base font-bold leading-normal tracking-wide border border-border-light dark:border-border-dark hover:border-text-light dark:hover:border-text-dark transition-colors" href="#contact">
+<span class="truncate">Get In Touch</span>
+</a>
+</div>
+</div>
+</section>
+<section class="py-24 sm:py-32" id="work">
+<div class="px-4 text-center">
+<h2 class="text-4xl sm:text-5xl font-bold leading-tight tracking-tighter mb-12">Selected Work</h2>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-8 p-4">
+<div class="group relative aspect-video rounded-xl overflow-hidden cursor-pointer transition-all duration-300 hover:scale-[1.02]" data-alt="Abstract design for Project Alpha">
+<div class="absolute inset-0 bg-cover bg-center transition-transform duration-500 group-hover:scale-110" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuAwt0OkuHMpRt42xZn8yQaLXJaPnzUp1KEYfjRoLHlALQo0ineayAWb8ktnWKzlVURQLb7gavVlGfO2ubK1V4L7s6MmMG2z3OJ65isXutR6cOpQrKXL1_h45FZ_KOcxLdMSw1du0OAXCVIxZV82_s-PGecciUuj4ub3LlTSWFg1PcrrmY72y2KzSyw4N6KH5mW13hxGeyBUF1bjg0iBqweQ1HDSgOCTewaTlYrhSa7O45nsM8cEJ7vp7VGvaZpIfPUHa6RP7T0_vWRD");'></div>
+<div class="absolute inset-0 glassy-card glassy-card-light glassy-card-dark flex flex-col justify-end p-6">
+<h3 class="text-xl font-bold leading-tight text-text-light dark:text-text-dark">Project Alpha</h3>
+<p class="text-sm text-text-light/80 dark:text-text-dark/80">UI/UX Design, Branding</p>
+</div>
+</div>
+<div class="group relative aspect-video rounded-xl overflow-hidden cursor-pointer transition-all duration-300 hover:scale-[1.02]" data-alt="Abstract design for Project Beta">
+<div class="absolute inset-0 bg-cover bg-center transition-transform duration-500 group-hover:scale-110" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuD_2mFXm3QYXDuOEq3nl_0dlNVKN2-wdd9UJjO5d3YQVRZjMUG4-s-XodGks4ICAWpswYFyxGN1s4WsSsBvuPHMVNVl1QcAm3GPMoXd8xTS46kwZUCCjTB8ZjLkBNono3IEbilB7QJlS6jVa-5YCeoq7ZSSqXf3bXSlhNNP9JamGY0VO8b9qFr7v7dFtctzNtH98ckFtxhsY7loBzkku_niX0AG4kgx4FewRAypTHKGx82sjlpWUyR-EDcTv-i0ZSBehGmPgktMWqYM");'></div>
+<div class="absolute inset-0 glassy-card glassy-card-light glassy-card-dark flex flex-col justify-end p-6">
+<h3 class="text-xl font-bold leading-tight text-text-light dark:text-text-dark">Project Beta</h3>
+<p class="text-sm text-text-light/80 dark:text-text-dark/80">Web Development, Interaction</p>
+</div>
+</div>
+<div class="group relative aspect-video rounded-xl overflow-hidden cursor-pointer transition-all duration-300 hover:scale-[1.02]" data-alt="Abstract design for Project Gamma">
+<div class="absolute inset-0 bg-cover bg-center transition-transform duration-500 group-hover:scale-110" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDT1haQ1WLTlhqEknGzP-Vpv70QPYnwBexOtUZ0WVrYAUGXH-ynNANKpx0vx3nMJyT4V50sVaFM6t6Gms8nN9OGtXiB_QzkLEWuICKYdd5COFQWP-zQ2mpHdLVSYcs_f_BDPW3HGqeIleK_rKFhMs7GtnLlOFpc2OuGQvoNy1wFHFYtBePAbFcPEi3wRT1OI4HQD3Q7c7HDuH3e2-pMmK159sCzUEWJHzU56Gf6ls7lDsz8H1FSYUWxkzPjdWsXj2c12QLf-dmC7F-b");'></div>
+<div class="absolute inset-0 glassy-card glassy-card-light glassy-card-dark flex flex-col justify-end p-6">
+<h3 class="text-xl font-bold leading-tight text-text-light dark:text-text-dark">Project Gamma</h3>
+<p class="text-sm text-text-light/80 dark:text-text-dark/80">Design System</p>
+</div>
+</div>
+<div class="group relative aspect-video rounded-xl overflow-hidden cursor-pointer transition-all duration-300 hover:scale-[1.02]" data-alt="Abstract design for Project Delta">
+<div class="absolute inset-0 bg-cover bg-center transition-transform duration-500 group-hover:scale-110" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuBIGbw89k_iJY3imqKQ6fPuwz5Y3ZSt09_bAuXwWvfgoJnSWxJTtojQrUfnYmJABf7eTguF6hSnCN39rzmsH4M7Uej_gqL4VgdPdQvELxUxRJn8KZO22rjrA9l-eaRLuCqY7eLbjY98wKuYs7Cvn9sNoZaXAUW1--8AemSP_U-HT36o8t8KG1iPIcclg2py-rKNscGFhZcvGx5X66r1foswhXVwDTPcNQUtFaUYR-q3z9rBMxJzHjkO8FWynER98WptdmAjsROH_sAO");'></div>
+<div class="absolute inset-0 glassy-card glassy-card-light glassy-card-dark flex flex-col justify-end p-6">
+<h3 class="text-xl font-bold leading-tight text-text-light dark:text-text-dark">Project Delta</h3>
+<p class="text-sm text-text-light/80 dark:text-text-dark/80">Mobile App Design</p>
+</div>
+</div>
+</div>
+</section>
+<section class="py-24 sm:py-32" id="about">
+<div class="px-4 text-center">
+<h2 class="text-4xl sm:text-5xl font-bold leading-tight tracking-tighter mb-12">About Me</h2>
+</div>
+<div class="p-4 grid grid-cols-1 md:grid-cols-5 gap-12 items-center">
+<div class="md:col-span-2 bg-center bg-cover rounded-xl aspect-square" data-alt="Professional headshot of Jane Doe" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDO17esMSApkeuDZ4cnmA7qmS4qVO8qw2H5GKdI09NwIYeBdDvJ1yjwrnZxGcuCy6OCPIe9nil_cYmwdT_RoUsPuqKumuFLYRkO4d6JQJvGtBo7_97BHdbeVJGrLAl-Kf13Cf_76YCI0a35be6xCUKoBt3sul3ZYSVq7NRkhWqh19E6bP9FxD8vb8cWfQfdBpuCc-xzD7ILtXSLsTGSv5AVUjKdKV6tdTsGxWBKtJ1s-Nq7Be4AVoDCiey2RCqfwdTeedUB2OvgEjov');"></div>
+<div class="md:col-span-3 flex flex-col gap-8">
+<p class="text-lg leading-relaxed text-text-light/80 dark:text-text-dark/80">
+                                        I'm a passionate Product Designer with a knack for solving complex user problems through intuitive and beautiful design. My process is deeply rooted in user research, empathy, and a commitment to creating experiences that are not only functional but also delightful to use.
+                                    </p>
+</div>
+</div>
+</section>
+<section class="py-12 sm:py-20">
+<div class="px-4 text-center">
+<h2 class="text-4xl sm:text-5xl font-bold leading-tight tracking-tighter mb-12">Expertise</h2>
+</div>
+<div class="relative px-4 py-16">
+<div class="absolute inset-x-0 top-0 h-[1px] bg-gradient-to-r from-transparent via-border-light dark:via-border-dark to-transparent"></div>
+<div class="absolute inset-x-0 bottom-0 h-[1px] bg-gradient-to-r from-transparent via-border-light dark:via-border-dark to-transparent"></div>
+<div class="absolute inset-y-0 left-0 w-[1px] bg-gradient-to-b from-transparent via-border-light dark:via-border-dark to-transparent"></div>
+<div class="absolute inset-y-0 right-0 w-[1px] bg-gradient-to-b from-transparent via-border-light dark:via-border-dark to-transparent"></div>
+<div class="absolute left-0 top-0 h-4 w-4 border-l border-t border-border-light dark:border-border-dark"></div>
+<div class="absolute right-0 top-0 h-4 w-4 border-r border-t border-border-light dark:border-border-dark"></div>
+<div class="absolute left-0 bottom-0 h-4 w-4 border-l border-b border-border-light dark:border-border-dark"></div>
+<div class="absolute right-0 bottom-0 h-4 w-4 border-r border-b border-border-light dark:border-border-dark"></div>
+<div class="max-w-4xl mx-auto flex flex-wrap justify-center gap-4">
+<span class="group relative px-5 py-3 text-base rounded-lg border border-border-light dark:border-border-dark bg-subtle-light dark:bg-subtle-dark transition-all duration-300 hover:shadow-neon-cyan hover:border-neon-cyan hover:scale-105 hover:bg-subtle-light/50 dark:hover:bg-subtle-dark/50 cursor-default">UI Design</span>
+<span class="group relative px-5 py-3 text-base rounded-lg border border-border-light dark:border-border-dark bg-subtle-light dark:bg-subtle-dark transition-all duration-300 hover:shadow-neon-cyan hover:border-neon-cyan hover:scale-105 hover:bg-subtle-light/50 dark:hover:bg-subtle-dark/50 cursor-default">UX Research</span>
+<span class="group relative px-5 py-3 text-base rounded-lg border border-border-light dark:border-border-dark bg-subtle-light dark:bg-subtle-dark transition-all duration-300 hover:shadow-neon-cyan hover:border-neon-cyan hover:scale-105 hover:bg-subtle-light/50 dark:hover:bg-subtle-dark/50 cursor-default">Prototyping</span>
+<span class="group relative px-5 py-3 text-base rounded-lg border border-border-light dark:border-border-dark bg-subtle-light dark:bg-subtle-dark transition-all duration-300 hover:shadow-neon-cyan hover:border-neon-cyan hover:scale-105 hover:bg-subtle-light/50 dark:hover:bg-subtle-dark/50 cursor-default">Design Systems</span>
+<span class="group relative px-5 py-3 text-base rounded-lg border border-border-light dark:border-border-dark bg-subtle-light dark:bg-subtle-dark transition-all duration-300 hover:shadow-neon-cyan hover:border-neon-cyan hover:scale-105 hover:bg-subtle-light/50 dark:hover:bg-subtle-dark/50 cursor-default">Interaction Design</span>
+<span class="group relative px-5 py-3 text-base rounded-lg border border-border-light dark:border-border-dark bg-subtle-light dark:bg-subtle-dark transition-all duration-300 hover:shadow-neon-cyan hover:border-neon-cyan hover:scale-105 hover:bg-subtle-light/50 dark:hover:bg-subtle-dark/50 cursor-default">Web Development</span>
+<span class="group relative px-5 py-3 text-base rounded-lg border border-border-light dark:border-border-dark bg-subtle-light dark:bg-subtle-dark transition-all duration-300 hover:shadow-neon-cyan hover:border-neon-cyan hover:scale-105 hover:bg-subtle-light/50 dark:hover:bg-subtle-dark/50 cursor-default">Branding</span>
+</div>
+</div>
+</section>
+<section class="py-24 sm:py-32 text-center" id="contact">
+<div class="p-4 flex flex-col items-center gap-6">
+<h2 class="text-4xl sm:text-5xl font-bold leading-tight tracking-tighter">Let's Create Together</h2>
+<p class="max-w-xl text-lg text-text-light/80 dark:text-text-dark/80">Have a project in mind? I'm currently available for freelance projects and full-time opportunities. Let's talk.</p>
+<a class="group relative inline-block mt-6" href="mailto:hello@janedoe.design">
+<div class="absolute -inset-0.5 bg-neon-cyan rounded-lg blur opacity-50 group-hover:opacity-75 transition duration-300"></div>
+<div class="relative flex items-center justify-center px-8 py-4 bg-background-light dark:bg-background-dark text-lg font-semibold rounded-lg">
+                                hello@janedoe.design
+                            </div>
+</a>
+<div class="flex gap-8 mt-8">
+<a class="text-text-light/60 dark:text-text-dark/60 hover:text-text-light dark:hover:text-text-dark transition-colors" data-alt="LinkedIn Profile" href="#">
+<svg aria-hidden="true" class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24"><path d="M20.5 2h-17A1.5 1.5 0 002 3.5v17A1.5 1.5 0 003.5 22h17a1.5 1.5 0 001.5-1.5v-17A1.5 1.5 0 0020.5 2zM8 19H5v-9h3zM6.5 8.25A1.75 1.75 0 118.25 6.5 1.75 1.75 0 016.5 8.25zM19 19h-3v-4.75c0-1.4-1.2-2.5-2.5-2.5S11 12.85 11 14.25V19h-3v-9h2.9v1.35c.4-.75 1.4-1.35 2.6-1.35 2.8 0 5 2.2 5 5V19z"></path></svg>
+</a>
+<a class="text-text-light/60 dark:text-text-dark/60 hover:text-text-light dark:hover:text-text-dark transition-colors" data-alt="Dribbble Profile" href="#">
+<svg aria-hidden="true" class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24"><path clip-rule="evenodd" d="M12 2C6.477 2 2 6.477 2 12s4.477 10 10 10c.338 0 .672-.017.999-.05a.75.75 0 00.45-1.012 8.455 8.455 0 01-2.95-6.945c.196-4.043 3.49-7.25 7.549-7.25.992 0 1.932.193 2.785.543a.75.75 0 00.97-.562A9.974 9.974 0 0012 2zm3.336 8.169a.75.75 0 00-1.03-1.093 7.01 7.01 0 00-2.306 1.465 7.12 7.12 0 00-2.388 5.617.75.75 0 00.672 1.017 8.51 8.51 0 005.186-2.072 6.94 6.94 0 00-.134-4.934z" fill-rule="evenodd"></path><path d="M17.135 7.19a8.452 8.452 0 013.81 3.566.75.75 0 01-.65 1.123 7.003 7.003 0 01-3.6-1.025.75.75 0 01.44-1.393zM21.95 12.5a.75.75 0 01-1.012-.45 8.454 8.454 0 00-6.945-2.95c-4.043.196-7.25 3.49-7.25 7.549 0 .992.193 1.932.543 2.785a.75.75 0 01-.562.97A9.974 9.974 0 012 12c0-5.523 4.477-10 10-10a9.973 9.973 0 018.169 5.336.75.75 0 01-1.03 1.093 7.01 7.01 0 00-1.465-2.306.75.75 0 011.093-1.03 8.452 8.452 0 013.183 2.437z"></path></svg>
+</a>
+<a class="text-text-light/60 dark:text-text-dark/60 hover:text-text-light dark:hover:text-text-dark transition-colors" data-alt="Behance Profile" href="#">
+<svg aria-hidden="true" class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24"><path d="M22 5.5h-5.5v-1h5.5v1zM17.5 11.25c-1.35 0-2.43 1.1-2.43 2.47s1.08 2.47 2.43 2.47c1.35 0 2.43-1.1 2.43-2.47s-1.08-2.47-2.43-2.47zm0 3.94c-.81 0-1.45-.66-1.45-1.47s.64-1.47 1.45-1.47c.81 0 1.45.66 1.45 1.47s-.64 1.47-1.45 1.47zM18.5 7.75h-7v1h7v-1zM9.37 16.24c-1.25 0-2.88-.42-2.88-2.44v-3.3h5.2v1h-4.2v2.3c0 .8.6 1.14 1.48 1.14.9 0 1.5-.4 1.5-.4l.6 1s-.9.7-2.7.7zM2 2v20h20V2H2zm19 19H3V3h18v18z"></path></svg>
+</a>
+</div>
+</div>
+</section>
+</main>
+<footer class="mt-24 text-center border-t border-border-light dark:border-border-dark py-8">
+<p class="text-sm text-text-light/60 dark:text-text-dark/60">© 2024 Jane Doe. All Rights Reserved.</p>
+</footer>
+</div>
+</div>
+</div>
+</div>
+</body></html>
