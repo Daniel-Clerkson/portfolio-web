@@ -6,23 +6,39 @@ import Image from "next/image";
 import Link from "next/link";
 import { ClipLoader } from "react-spinners";
 
-const ProjectCards = () => {
-  const [readMore, setReadMore] = useState(false);
-  const [dataVal, setDataVal] = useState(null);
-  const [fetching, setFetching] = useState(false);
-  
-  const toggleReadMore = () => setReadMore((prev) => !prev);
+// Types
+interface Technology {
+  name: string;
+  color: string;
+}
 
-  const getProjects = async () => {
+interface Project {
+  id: string;
+  title: string;
+  description: string;
+  img: string;
+  source: string;
+  link: string;
+  technologies: Technology[];
+}
+
+const ProjectCards: React.FC = () => {
+  const [readMore, setReadMore] = useState<boolean>(false);
+  const [dataVal, setDataVal] = useState<Project[] | null>(null);
+  const [fetching, setFetching] = useState<boolean>(false);
+  
+  const toggleReadMore = (): void => setReadMore((prev) => !prev);
+
+  const getProjects = async (): Promise<void> => {
     try {
       setFetching(true); 
       const res = await fetch("/api", { method: "GET" });
 
-      if (!res) {
+      if (!res.ok) {
         throw new Error("Error Fetching data");
       }
 
-      const response = await res.json();
+      const response: Project[] = await res.json();
       console.log(response);
       setDataVal(response);
     } catch (error) {
@@ -40,18 +56,18 @@ const ProjectCards = () => {
     <div className="flex flex-wrap items-center justify-center gap-10 px-4 sm:px-6 lg:px-8 py-8">
       {fetching ? (
         /* Optional: Add a Loading Skeleton or Text here */
-        <ClipLoader  />
+        <ClipLoader />
       ) : (
         /* Added optional chaining (?.) to prevent crash if dataVal is null */
         dataVal?.map((data) => (
           <CometCard
             className="w-full max-w-sm sm:max-w-md md:max-w-lg lg:max-w-xl rounded-2xl m-5"
-            key={data.id} // Note: Using index is better than new Date() for React stability
+            key={data.id}
           >
             <div className="info">
               <div className="img relative group rounded-t-2xl">
                 <Image
-                loading="eager"
+                  loading="eager"
                   src={`${data.img}`}
                   width={0}
                   height={0}

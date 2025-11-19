@@ -1,5 +1,5 @@
 "use client";
-import { useState, useEffect } from "react";
+import { useState, useEffect, FormEvent, ChangeEvent, KeyboardEvent } from "react";
 import {
   Plus,
   X,
@@ -13,9 +13,43 @@ import {
   Check,
 } from "lucide-react";
 
+// Types
+interface ColorOption {
+  name: string;
+  value: string;
+  hex: string;
+}
+
+interface Technology {
+  name: string;
+  color: string;
+}
+
+interface FormData {
+  title: string;
+  description: string;
+  img: File | null;
+  source: string;
+  link: string;
+}
+
+interface Project {
+  id: string;
+  title: string;
+  description: string;
+  img: string;
+  source: string;
+  link: string;
+  technologies: Technology[];
+}
+
+interface UploadResponse {
+  url: string;
+}
+
 const CreateProject = () => {
   // Color presets mapping to specific tailwind strings required by your schema
-  const colorOptions = [
+  const colorOptions: ColorOption[] = [
     { name: "Blue", value: "bg-blue-500 hover:bg-blue-600", hex: "#3b82f6" },
     {
       name: "Dark Blue",
@@ -45,26 +79,26 @@ const CreateProject = () => {
   ];
 
   // Form State
-  const [formData, setFormData] = useState({
+  const [formData, setFormData] = useState<FormData>({
     title: "",
     description: "",
-    img: null as File | null,
+    img: null,
     source: "",
     link: "",
   });
 
   // Separate state for the actual image file preview (Blob URL)
-  const [imagePreview, setImagePreview] = useState("");
+  const [imagePreview, setImagePreview] = useState<string>("");
 
   // Tech Stack State
-  const [technologies, setTechnologies] = useState([]);
-  const [currentTech, setCurrentTech] = useState({
+  const [technologies, setTechnologies] = useState<Technology[]>([]);
+  const [currentTech, setCurrentTech] = useState<Technology>({
     name: "",
     color: colorOptions[0].value,
   });
 
   // Submission State
-  const [submittedData, setSubmittedData] = useState(null);
+  const [submittedData, setSubmittedData] = useState<Project[] | null>(null);
 
   // Clean up object URL to avoid memory leaks
   useEffect(() => {
@@ -74,12 +108,12 @@ const CreateProject = () => {
   }, [imagePreview]);
 
   // Handlers
-  const handleChange = (e) => {
+  const handleChange = (e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>): void => {
     const { name, value } = e.target;
     setFormData((prev) => ({ ...prev, [name]: value }));
   };
 
-  const handleFileChange = (e) => {
+  const handleFileChange = (e: ChangeEvent<HTMLInputElement>): void => {
     const file = e.target.files?.[0];
     if (!file) return;
 
@@ -91,7 +125,7 @@ const CreateProject = () => {
     setFormData((prev) => ({ ...prev, img: file }));
   };
 
-  const uploadImage = async (file) => {
+  const uploadImage = async (file: File): Promise<string> => {
     const form = new FormData();
     form.append("file", file);
 
@@ -100,29 +134,29 @@ const CreateProject = () => {
       body: form,
     });
 
-    const data = await res.json();
+    const data: UploadResponse = await res.json();
     return data.url; // e.g. /uploads/173567123123-cat.png
   };
 
-  const handleTechChange = (e) => {
+  const handleTechChange = (e: ChangeEvent<HTMLInputElement>): void => {
     setCurrentTech((prev) => ({ ...prev, name: e.target.value }));
   };
 
-  const handleColorSelect = (colorValue) => {
+  const handleColorSelect = (colorValue: string): void => {
     setCurrentTech((prev) => ({ ...prev, color: colorValue }));
   };
 
-  const addTechnology = () => {
+  const addTechnology = (): void => {
     if (!currentTech.name.trim()) return;
     setTechnologies([...technologies, { ...currentTech }]);
     setCurrentTech((prev) => ({ ...prev, name: "" }));
   };
 
-  const removeTechnology = (indexToRemove) => {
+  const removeTechnology = (indexToRemove: number): void => {
     setTechnologies(technologies.filter((_, index) => index !== indexToRemove));
   };
 
-  const handleSubmit = async (e) => {
+  const handleSubmit = async (e: FormEvent<HTMLFormElement>): Promise<void> => {
     e.preventDefault();
 
     let uploadedImageUrl = "";
@@ -132,7 +166,7 @@ const CreateProject = () => {
       uploadedImageUrl = await uploadImage(formData.img);
     }
 
-    const newProject = {
+    const newProject: Project = {
       id: crypto.randomUUID(),
       title: formData.title,
       description: formData.description,
@@ -142,7 +176,7 @@ const CreateProject = () => {
       technologies: technologies,
     };
 
-    const payload = [newProject];
+    const payload: Project[] = [newProject];
 
     try {
       const response = await fetch("/api", {
@@ -151,11 +185,18 @@ const CreateProject = () => {
         body: JSON.stringify(payload),
       });
 
-      const res = await response.json();
+      await response.json();
 
       setSubmittedData(payload);
     } catch (error) {
       console.log(error);
+    }
+  };
+
+  const handleKeyPress = (e: KeyboardEvent<HTMLInputElement>): void => {
+    if (e.key === "Enter") {
+      e.preventDefault();
+      addTechnology();
     }
   };
 
@@ -196,7 +237,7 @@ const CreateProject = () => {
                 value={formData.description}
                 onChange={handleChange}
                 placeholder="Describe the project..."
-                rows="4"
+                rows={4}
                 className="w-full p-3 rounded-lg border border-gray-300 dark:border-gray-600 dark:bg-gray-700 dark:text-gray-100 focus:ring-2 focus:ring-blue-500 outline-none transition-all resize-none"
                 required
               />
@@ -309,9 +350,7 @@ const CreateProject = () => {
                     onChange={handleTechChange}
                     placeholder="Tech Name (e.g. React)"
                     className="flex-1 p-2 border border-gray-300 dark:border-gray-600 dark:bg-gray-700 dark:text-gray-100 rounded-lg focus:outline-none focus:border-blue-500"
-                    onKeyPress={(e) =>
-                      e.key === "Enter" && (e.preventDefault(), addTechnology())
-                    }
+                    onKeyPress={handleKeyPress}
                   />
                   <button
                     type="button"
@@ -470,7 +509,7 @@ const CreateProject = () => {
 };
 
 // Simple icon component for local use
-const EyeIcon = () => (
+const EyeIcon: React.FC = () => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
     width="20"

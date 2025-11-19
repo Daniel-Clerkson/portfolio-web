@@ -1,5 +1,5 @@
 "use client";
-import { useState, useEffect } from "react";
+import { useState, useEffect, FormEvent, ChangeEvent } from "react";
 import {
   Plus,
   Trash2,
@@ -15,15 +15,61 @@ import {
   X,
 } from "lucide-react";
 
+// Types
+interface Technology {
+  name: string;
+  color: string;
+}
+
+interface Project {
+  id: string;
+  title: string;
+  description: string;
+  img?: string;
+  source?: string;
+  link?: string;
+  technologies?: Technology[];
+}
+
+interface Notification {
+  message: string;
+  type: "success" | "error";
+}
+
+interface ProjectCardProps {
+  project: Project;
+  onDelete: () => void;
+  onEdit: () => void;
+}
+
+interface ModalProps {
+  children: React.ReactNode;
+  onClose: () => void;
+}
+
+interface EditModalProps {
+  project: Project;
+  onClose: () => void;
+  onSave: (project: Project) => void;
+}
+
+interface EditFormData {
+  id: string;
+  title: string;
+  description: string;
+  source: string;
+  link: string;
+}
+
 const Dashboard = () => {
-  const [projects, setProjects] = useState([]);
-  const [filteredProjects, setFilteredProjects] = useState([]);
-  const [loading, setLoading] = useState(true);
-  const [searchTerm, setSearchTerm] = useState("");
-  const [selectedTech, setSelectedTech] = useState("all");
-  const [deleteConfirm, setDeleteConfirm] = useState(null);
-  const [editingProject, setEditingProject] = useState(null);
-  const [notification, setNotification] = useState(null);
+  const [projects, setProjects] = useState<Project[]>([]);
+  const [filteredProjects, setFilteredProjects] = useState<Project[]>([]);
+  const [loading, setLoading] = useState<boolean>(true);
+  const [searchTerm, setSearchTerm] = useState<string>("");
+  const [selectedTech, setSelectedTech] = useState<string>("all");
+  const [deleteConfirm, setDeleteConfirm] = useState<Project | null>(null);
+  const [editingProject, setEditingProject] = useState<Project | null>(null);
+  const [notification, setNotification] = useState<Notification | null>(null);
 
   // Fetch projects on mount
   useEffect(() => {
@@ -51,11 +97,11 @@ const Dashboard = () => {
     setFilteredProjects(filtered);
   }, [searchTerm, selectedTech, projects]);
 
-  const fetchProjects = async () => {
+  const fetchProjects = async (): Promise<void> => {
     try {
       setLoading(true);
       const response = await fetch("/api");
-      const data = await response.json();
+      const data: Project[] = await response.json();
       setProjects(data);
       setFilteredProjects(data);
     } catch (error) {
@@ -65,7 +111,7 @@ const Dashboard = () => {
     }
   };
 
-  const deleteProject = async (id) => {
+  const deleteProject = async (id: string): Promise<void> => {
     try {
       const response = await fetch(`/api?id=${id}`, {
         method: "DELETE",
@@ -82,7 +128,7 @@ const Dashboard = () => {
     }
   };
 
-  const updateProject = async (updatedProject) => {
+  const updateProject = async (updatedProject: Project): Promise<void> => {
     try {
       const response = await fetch("/api", {
         method: "PATCH",
@@ -91,7 +137,7 @@ const Dashboard = () => {
       });
 
       if (response.ok) {
-        const result = await response.json();
+        const result: { project: Project } = await response.json();
         setProjects(
           projects.map((p) =>
             p.id === updatedProject.id ? result.project : p
@@ -105,13 +151,13 @@ const Dashboard = () => {
     }
   };
 
-  const showNotification = (message, type) => {
+  const showNotification = (message: string, type: "success" | "error"): void => {
     setNotification({ message, type });
     setTimeout(() => setNotification(null), 3000);
   };
 
   // Get all unique technologies for filter
-  const allTechnologies = [
+  const allTechnologies: string[] = [
     ...new Set(
       projects.flatMap((p) => p.technologies?.map((t) => t.name) || [])
     ),
@@ -169,7 +215,7 @@ const Dashboard = () => {
                 type="text"
                 placeholder="Search projects..."
                 value={searchTerm}
-                onChange={(e) => setSearchTerm(e.target.value)}
+                onChange={(e: ChangeEvent<HTMLInputElement>) => setSearchTerm(e.target.value)}
                 className="w-full pl-10 pr-4 py-2.5 rounded-lg border border-gray-300 dark:border-gray-600 dark:bg-gray-700 dark:text-gray-100 focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none"
               />
             </div>
@@ -180,7 +226,7 @@ const Dashboard = () => {
                 <Filter className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-gray-400" />
                 <select
                   value={selectedTech}
-                  onChange={(e) => setSelectedTech(e.target.value)}
+                  onChange={(e: ChangeEvent<HTMLSelectElement>) => setSelectedTech(e.target.value)}
                   className="w-full lg:w-auto pl-10 pr-8 py-2.5 rounded-lg border border-gray-300 dark:border-gray-600 dark:bg-gray-700 dark:text-gray-100 focus:ring-2 focus:ring-blue-500 outline-none appearance-none cursor-pointer"
                 >
                   <option value="all">All Technologies</option>
@@ -300,7 +346,7 @@ const Dashboard = () => {
 };
 
 // Project Card Component
-const ProjectCard = ({ project, onDelete, onEdit }) => {
+const ProjectCard: React.FC<ProjectCardProps> = ({ project, onDelete, onEdit }) => {
   return (
     <div className="bg-white dark:bg-gray-800 rounded-xl overflow-hidden border border-gray-200 dark:border-gray-700 hover:shadow-lg transition-shadow group">
       {/* Image */}
@@ -353,7 +399,7 @@ const ProjectCard = ({ project, onDelete, onEdit }) => {
               {tech.name}
             </span>
           ))}
-          {project.technologies?.length > 3 && (
+          {project.technologies && project.technologies.length > 3 && (
             <span className="bg-gray-200 dark:bg-gray-700 text-gray-700 dark:text-gray-300 text-xs px-2 py-1 rounded-md">
               +{project.technologies.length - 3}
             </span>
@@ -389,7 +435,7 @@ const ProjectCard = ({ project, onDelete, onEdit }) => {
 };
 
 // Modal Component
-const Modal = ({ children, onClose }) => {
+const Modal: React.FC<ModalProps> = ({ children, onClose }) => {
   return (
     <div className="fixed inset-0 bg-black/50 z-50 flex items-center justify-center p-4">
       <div className="bg-white dark:bg-gray-800 rounded-xl max-w-md w-full p-6 relative">
@@ -406,8 +452,8 @@ const Modal = ({ children, onClose }) => {
 };
 
 // Edit Modal Component
-const EditModal = ({ project, onClose, onSave }) => {
-  const [formData, setFormData] = useState({
+const EditModal: React.FC<EditModalProps> = ({ project, onClose, onSave }) => {
+  const [formData, setFormData] = useState<EditFormData>({
     id: project.id,
     title: project.title,
     description: project.description,
@@ -415,7 +461,7 @@ const EditModal = ({ project, onClose, onSave }) => {
     link: project.link || "",
   });
 
-  const handleSubmit = (e) => {
+  const handleSubmit = (e: FormEvent<HTMLFormElement>): void => {
     e.preventDefault();
     onSave({
       ...project,
@@ -438,7 +484,7 @@ const EditModal = ({ project, onClose, onSave }) => {
           </button>
         </div>
 
-        <div className="space-y-4">
+        <form onSubmit={handleSubmit} className="space-y-4">
           <div>
             <label className="block text-sm font-semibold text-gray-700 dark:text-gray-300 mb-2">
               Title
@@ -446,7 +492,7 @@ const EditModal = ({ project, onClose, onSave }) => {
             <input
               type="text"
               value={formData.title}
-              onChange={(e) =>
+              onChange={(e: ChangeEvent<HTMLInputElement>) =>
                 setFormData({ ...formData, title: e.target.value })
               }
               className="w-full p-3 rounded-lg border border-gray-300 dark:border-gray-600 dark:bg-gray-700 dark:text-gray-100 focus:ring-2 focus:ring-blue-500 outline-none"
@@ -459,10 +505,10 @@ const EditModal = ({ project, onClose, onSave }) => {
             </label>
             <textarea
               value={formData.description}
-              onChange={(e) =>
+              onChange={(e: ChangeEvent<HTMLTextAreaElement>) =>
                 setFormData({ ...formData, description: e.target.value })
               }
-              rows="4"
+              rows={4}
               className="w-full p-3 rounded-lg border border-gray-300 dark:border-gray-600 dark:bg-gray-700 dark:text-gray-100 focus:ring-2 focus:ring-blue-500 outline-none resize-none"
             />
           </div>
@@ -475,7 +521,7 @@ const EditModal = ({ project, onClose, onSave }) => {
               <input
                 type="text"
                 value={formData.source}
-                onChange={(e) =>
+                onChange={(e: ChangeEvent<HTMLInputElement>) =>
                   setFormData({ ...formData, source: e.target.value })
                 }
                 className="w-full p-3 rounded-lg border border-gray-300 dark:border-gray-600 dark:bg-gray-700 dark:text-gray-100 focus:ring-2 focus:ring-blue-500 outline-none"
@@ -489,7 +535,7 @@ const EditModal = ({ project, onClose, onSave }) => {
               <input
                 type="text"
                 value={formData.link}
-                onChange={(e) =>
+                onChange={(e: ChangeEvent<HTMLInputElement>) =>
                   setFormData({ ...formData, link: e.target.value })
                 }
                 className="w-full p-3 rounded-lg border border-gray-300 dark:border-gray-600 dark:bg-gray-700 dark:text-gray-100 focus:ring-2 focus:ring-blue-500 outline-none"
@@ -499,19 +545,20 @@ const EditModal = ({ project, onClose, onSave }) => {
 
           <div className="flex gap-3 pt-4">
             <button
+              type="button"
               onClick={onClose}
               className="flex-1 px-6 py-3 rounded-lg border border-gray-300 dark:border-gray-600 hover:bg-gray-50 dark:hover:bg-gray-700 transition-colors"
             >
               Cancel
             </button>
             <button
-              onClick={handleSubmit}
+              type="submit"
               className="flex-1 px-6 py-3 rounded-lg bg-blue-600 hover:bg-blue-700 text-white transition-colors"
             >
               Save Changes
             </button>
           </div>
-        </div>
+        </form>
       </div>
     </div>
   );
