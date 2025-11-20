@@ -1,20 +1,39 @@
 [
-  {
-    "id": "ceaac3c9-fa12-4b97-af67-eaf93b76e201",
-    "title": "E-Commerce Webiste",
-    "description": "I made an ecommerce website",
+ {
+    "id": "9aa0fdfa-0ee3-4444-b4d4-91a1c9f8d3e8",
+    "title": "E-commerce Food Web App",
+    "description": "A full-featured food e-commerce platform with an admin dashboard for managing products, orders, and inventory. Integrates with an external API for real-time product data.",
+    "source": "https://github.com/Daniel-Clerkson/supreme-dollop",
+    "link": "https://supreme-dollop-delta.vercel.app/",
     "technologies": [
       {
         "name": "React",
         "color": "bg-blue-500 hover:bg-blue-600"
       },
       {
-        "name": "Tailwind Css",
+        "name": "TailwindCss",
+        "color": "bg-cyan-500 hover:bg-cyan-600"
+      },
+      {
+        "name": "NextJS",
+        "color": "bg-black hover:bg-gray-800"
+      },
+      {
+        "name": "TypeScript",
         "color": "bg-blue-600 hover:bg-blue-700"
+      },
+      {
+        "name": "RESTful APIs",
+        "color": "bg-yellow-500 hover:bg-yellow-600"
+      },
+      {
+        "name": "Admin Dashboard",
+        "color": "bg-red-500 hover:bg-red-600"
+      },
+      {
+        "name": "Authentication",
+        "color": "bg-red-500 hover:bg-red-600"
       }
-    ],
-    "img": "/uploads/1763560088565-Screenshot-2025-10-28-130420.png",
-    "source": "https://nextjs.org/docs/app/api-reference/functions/next-response",
-    "link": "https://test.com"
+    ]
   }
 ]
