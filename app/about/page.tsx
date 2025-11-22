@@ -204,7 +204,7 @@ export default function TerminalAbout() {
                             Daniel
                           </h3>
                           <p className="text-cyan-400 dark:text-cyan-600 text-sm sm:text-base md:text-lg">
-                            Front-End Developer & Physics Student
+                            Front-End Developer & Software Engineering Student
                           </p>
 
                           <div className="text-gray-300 dark:text-gray-700 text-xs sm:text-sm md:text-base space-y-2 sm:space-y-3 break-words">
