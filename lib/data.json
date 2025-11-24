@@ -1,17 +1,137 @@
 [
- {
-    "id": "9aa0fdfa-0ee3-4444-b4d4-91a1c9f8d3e8",
-    "title": "E-commerce Food Web App",
-    "description": "A full-featured food e-commerce platform with an admin dashboard for managing products, orders, and inventory. Integrates with an external API for real-time product data.",
-    "source": "https://github.com/Daniel-Clerkson/supreme-dollop",
-    "link": "https://supreme-dollop-delta.vercel.app/",
+  {
+    "id": "65e67623-a100-43aa-a96e-af7b30c5fe9c",
+    "title": "Agro E-Commerce Web App",
+    "description": "High-performance, responsive e-commerce platform built with modern frameworks. Provides comprehensive tools for listing, purchasing, and managing diverse agricultural products online.",
     "technologies": [
       {
         "name": "React",
         "color": "bg-blue-500 hover:bg-blue-600"
       },
       {
-        "name": "TailwindCss",
+        "name": "TailwindCSS",
+        "color": "bg-blue-600 hover:bg-blue-700"
+      },
+      {
+        "name": "API integration",
+        "color": "bg-red-500 hover:bg-red-600"
+      },
+      {
+        "name": "RESTful API's",
+        "color": "bg-red-500 hover:bg-red-600"
+      },
+      {
+        "name": "ShadCN",
+        "color": "bg-black hover:bg-gray-800"
+      }
+    ],
+    "img": "/uploads/1764002207648-Screenshot-2025-11-24-173203.png",
+    "source": "https://github.com/Daniel-Clerkson/improved-octo-dollop",
+    "link": "https://otims.vercel.app/"
+  },
+  {
+    "id": "18485af4-22a1-4bce-8b6a-2b921a451fd1",
+    "title": "Vysk Kitchen: High-Volume E-Commerce",
+    "description": "A scalable food ordering and delivery web application built for speed and reliability. Includes a complete management interface for real-time inventory updates and processing high-volume order flow via external APIs.",
+    "technologies": [
+      {
+        "name": "React",
+        "color": "bg-blue-500 hover:bg-blue-600"
+      },
+      {
+        "name": "TailwindCSS",
+        "color": "bg-blue-600 hover:bg-blue-700"
+      },
+      {
+        "name": "API integration",
+        "color": "bg-red-500 hover:bg-red-600"
+      },
+      {
+        "name": "RESTful API's",
+        "color": "bg-red-500 hover:bg-red-600"
+      },
+      {
+        "name": "ShadCN",
+        "color": "bg-black hover:bg-gray-800"
+      },
+      {
+        "name": "NextJS",
+        "color": "bg-black hover:bg-gray-800"
+      },
+      {
+        "name": "Framer Motion",
+        "color": "bg-red-500 hover:bg-red-600"
+      },
+      {
+        "name": "Markdown",
+        "color": "bg-orange-500 hover:bg-orange-600"
+      }
+    ],
+    "img": "/uploads/1764002761715-Screenshot-2025-11-24-174351.png",
+    "source": "https://github.com/Daniel-Clerkson/supreme-dollop/",
+    "link": "https://www.vyskcatering.co.uk/"
+  },
+  {
+    "id": "1d8108d6-0544-40c6-bee4-7053c2f52e0a",
+    "title": "YC Combinator Directory",
+    "description": "A full-stack, real-time platform designed to simulate a startup pitch directory and competition. It allows entrepreneurs to submit their startup ideas, visualize pitch details, and engage in voting/feedback loops. The application is optimized for speed and modern UI/UX to provide a seamless directory browsing experience.",
+    "technologies": [
+      {
+        "name": "ShadCN",
+        "color": "bg-black hover:bg-gray-800"
+      },
+      {
+        "name": "NextJS",
+        "color": "bg-black hover:bg-gray-800"
+      },
+      {
+        "name": "TailwindCSS",
+        "color": "bg-cyan-500 hover:bg-cyan-600"
+      },
+      {
+        "name": "React",
+        "color": "bg-blue-600 hover:bg-blue-700"
+      },
+      {
+        "name": "Sanity",
+        "color": "bg-pink-500 hover:bg-pink-600"
+      },
+      {
+        "name": "CMS",
+        "color": "bg-pink-500 hover:bg-pink-600"
+      },
+      {
+        "name": "Sentry",
+        "color": "bg-purple-500 hover:bg-purple-600"
+      },
+      {
+        "name": "Vercel",
+        "color": "bg-black hover:bg-gray-800"
+      },
+      {
+        "name": "RESTful APIs",
+        "color": "bg-pink-500 hover:bg-pink-600"
+      },
+      {
+        "name": "TypeScript",
+        "color": "bg-blue-600 hover:bg-blue-700"
+      }
+    ],
+    "img": "/uploads/1764004097734-Screenshot-2025-11-15-152212.png",
+    "source": "https://github.com/Daniel-Clerkson/yc_combinator",
+    "link": "https://yc-combinator.vercel.app/"
+  },
+  {
+    "id": "7f4d211d-7278-490f-8cd8-b2a7b671011b",
+    "title": "OfficeBox: Co-working & Tech Hub Booking Platform",
+    "description": "A complete, high-fidelity marketing and service platform for a real-world co-working space and tech innovation hub in Nigeria. This full-stack application features a highly responsive design, dynamic image carousels, and dedicated pages for communities and events. It includes core business functionality to manage service consultations and direct clients to a streamlined space-booking flow.",
+    "technologies": [
+      {
+        "name": "React",
+        "color": "bg-blue-500 hover:bg-blue-600"
+      },
+      {
+        "name": "TailwindCSS",
         "color": "bg-cyan-500 hover:bg-cyan-600"
       },
       {
@@ -19,21 +139,86 @@
         "color": "bg-black hover:bg-gray-800"
       },
       {
+        "name": "ShadCN",
+        "color": "bg-black hover:bg-gray-800"
+      },
+      {
+        "name": "RESTful APIs",
+        "color": "bg-pink-500 hover:bg-pink-600"
+      },
+      {
+        "name": "Vercel",
+        "color": "bg-black hover:bg-gray-800"
+      },
+      {
         "name": "TypeScript",
         "color": "bg-blue-600 hover:bg-blue-700"
       },
       {
-        "name": "RESTful APIs",
-        "color": "bg-yellow-500 hover:bg-yellow-600"
+        "name": "Framer Motion",
+        "color": "bg-orange-500 hover:bg-orange-600"
       },
       {
-        "name": "Admin Dashboard",
-        "color": "bg-red-500 hover:bg-red-600"
-      },
-      {
-        "name": "Authentication",
-        "color": "bg-red-500 hover:bg-red-600"
+        "name": "Responsive Web Design",
+        "color": "bg-purple-500 hover:bg-purple-600"
       }
-    ]
+    ],
+    "img": "/uploads/1764004659395-Screenshot-2025-11-24-181259.png",
+    "source": "https://github.com/Daniel-Clerkson/office-box",
+    "link": "https://office-box.vercel.app/"
+  },
+  {
+    "id": "d1fee73b-9e72-4c3a-925c-6b0375a8158a",
+    "title": "Personal Portfolio Website",
+    "description": "A minimalist and responsive personal portfolio crafted to showcase projects and skills, specifically highlighting expertise as a Front-End Developer. The site features a clean, modern aesthetic with clear navigation links to 'Work,' 'About,' and 'Contact' sections, serving as the central hub for professional engagement and discovery.",
+    "technologies": [
+      {
+        "name": "React",
+        "color": "bg-blue-500 hover:bg-blue-600"
+      },
+      {
+        "name": "TailwindCSS",
+        "color": "bg-cyan-500 hover:bg-cyan-600"
+      },
+      {
+        "name": "NextJS",
+        "color": "bg-black hover:bg-gray-800"
+      },
+      {
+        "name": "ShadCN",
+        "color": "bg-black hover:bg-gray-800"
+      },
+      {
+        "name": "Aceternity",
+        "color": "bg-black hover:bg-gray-800"
+      },
+      {
+        "name": "MagicUi",
+        "color": "bg-black hover:bg-gray-800"
+      },
+      {
+        "name": "Git",
+        "color": "bg-orange-500 hover:bg-orange-600"
+      },
+      {
+        "name": "Github",
+        "color": "bg-black hover:bg-gray-800"
+      },
+      {
+        "name": "Vercel",
+        "color": "bg-black hover:bg-gray-800"
+      },
+      {
+        "name": "Typescript",
+        "color": "bg-blue-600 hover:bg-blue-700"
+      },
+      {
+        "name": "Responsive Web Design",
+        "color": "bg-yellow-500 hover:bg-yellow-600"
+      }
+    ],
+    "img": "/uploads/1764004995205-Screenshot-2025-11-24-181932.png",
+    "source": "https://github.com/Daniel-Clerkson/portfolio-web",
+    "link": "https://portfolio-web-eight-green.vercel.app/"
   }
 ]

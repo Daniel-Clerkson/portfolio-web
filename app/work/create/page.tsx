@@ -1,5 +1,11 @@
 "use client";
-import { useState, useEffect, FormEvent, ChangeEvent, KeyboardEvent } from "react";
+import {
+  useState,
+  useEffect,
+  FormEvent,
+  ChangeEvent,
+  KeyboardEvent,
+} from "react";
 import {
   Plus,
   X,
@@ -108,7 +114,9 @@ const CreateProject = () => {
   }, [imagePreview]);
 
   // Handlers
-  const handleChange = (e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>): void => {
+  const handleChange = (
+    e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+  ): void => {
     const { name, value } = e.target;
     setFormData((prev) => ({ ...prev, [name]: value }));
   };
@@ -188,6 +196,21 @@ const CreateProject = () => {
       await response.json();
 
       setSubmittedData(payload);
+
+      setFormData({
+        title: "",
+        description: "",
+        img: null,
+        source: "",
+        link: "",
+      });
+
+      setImagePreview("");
+      setTechnologies([]);
+      setCurrentTech({
+        name: "",
+        color: colorOptions[0].value,
+      });
     } catch (error) {
       console.log(error);
     }

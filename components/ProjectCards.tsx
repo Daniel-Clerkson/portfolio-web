@@ -55,10 +55,8 @@ const ProjectCards: React.FC = () => {
   return (
     <div className="flex flex-wrap items-center justify-center gap-10 px-4 sm:px-6 lg:px-8 py-8">
       {fetching ? (
-        /* Optional: Add a Loading Skeleton or Text here */
         <ClipLoader />
       ) : (
-        /* Added optional chaining (?.) to prevent crash if dataVal is null */
         dataVal?.map((data) => (
           <CometCard
             className="w-full max-w-sm sm:max-w-md md:max-w-lg lg:max-w-xl rounded-2xl m-5"
@@ -115,7 +113,7 @@ const ProjectCards: React.FC = () => {
             </div>
 
             <div className="links flex items-center justify-center gap-3 sm:gap-4 p-4 sm:p-5 md:p-6 border-t border-gray-200 dark:border-0">
-              <Link href={data.link}>
+              <Link href={`${data.link}`} target="_blank">
                 <button className="flex items-center gap-2 px-4 sm:px-6 py-2 sm:py-2.5 bg-gradient-to-r from-blue-500 to-blue-600 hover:from-blue-600 hover:to-blue-700 text-white rounded-lg font-medium shadow-md hover:shadow-lg transition-all duration-200 transform hover:scale-105">
                   <Eye className="w-4 h-4 sm:w-5 sm:h-5" />
                   <span className="text-sm sm:text-base">Preview</span>

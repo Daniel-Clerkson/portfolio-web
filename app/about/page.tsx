@@ -6,7 +6,7 @@ import {
   AnimatedSpan,
 } from "@/components/ui/terminal";
 import Image from "next/image";
-import Logo from "@/public/daniel.jpeg"
+import Logo from "@/public/daniel.jpeg";
 
 export default function TerminalAbout() {
   const [section, setSection] = useState("home");
@@ -187,12 +187,12 @@ export default function TerminalAbout() {
                           <div className="w-24 h-24 sm:w-32 sm:h-32 md:w-40 md:h-40 lg:w-48 lg:h-48 rounded-full bg-gradient-to-br from-cyan-500 to-blue-600 p-1">
                             <div className="w-full h-full rounded-full bg-gray-800 dark:bg-gray-200 flex items-center justify-center text-3xl sm:text-4xl md:text-5xl lg:text-6xl">
                               <Image
-                              src={Logo}
-                              width={0}
-                              height={0}
-                              sizes="100vw"
-                              alt="Project"
-                              className="object-cover rounded-full"
+                                src={Logo}
+                                width={0}
+                                height={0}
+                                sizes="100vw"
+                                alt="Project"
+                                className="object-cover rounded-full"
                               />
                             </div>
                           </div>
@@ -368,7 +368,13 @@ export default function TerminalAbout() {
                             • Admin panel interfaces
                           </li>
                           <li className="break-words">
-                            • Responsive web applications
+                            Agro E-Commerce Platform{" "}
+                          </li>
+                          <li className="break-words">
+                            YC Combinator Directory{" "}
+                          </li>
+                          <li className="break-words">
+                            OfficeBox: Co-working & Tech Hub Booking Platform{" "}
                           </li>
                         </ul>
                       </div>
@@ -421,19 +427,19 @@ export default function TerminalAbout() {
                         </div>
                         <div className="flex flex-wrap gap-2">
                           <span className="px-3 py-1.5 bg-blue-900/30 dark:bg-blue-200 text-blue-400 dark:text-blue-700 rounded text-xs">
-                            ⚛️ React
+                             React
                           </span>
                           <span className="px-3 py-1.5 bg-blue-900/30 dark:bg-blue-200 text-blue-400 dark:text-blue-700 rounded text-xs">
-                            ▲ Next.js
+                             Next.js
                           </span>
                           <span className="px-3 py-1.5 bg-blue-900/30 dark:bg-blue-200 text-blue-400 dark:text-blue-700 rounded text-xs">
-                            💨 Tailwind CSS
+                             Tailwind CSS
                           </span>
                           <span className="px-3 py-1.5 bg-blue-900/30 dark:bg-blue-200 text-blue-400 dark:text-blue-700 rounded text-xs">
-                            📘 TypeScript
+                             TypeScript
                           </span>
                           <span className="px-3 py-1.5 bg-blue-900/30 dark:bg-blue-200 text-blue-400 dark:text-blue-700 rounded text-xs">
-                            📜 JavaScript
+                             JavaScript
                           </span>
                         </div>
                       </div>
@@ -453,16 +459,16 @@ export default function TerminalAbout() {
                         </div>
                         <div className="flex flex-wrap gap-2">
                           <span className="px-3 py-1.5 bg-pink-900/30 dark:bg-pink-200 text-pink-400 dark:text-pink-700 rounded text-xs">
-                            🎨 CSS3
+                             CSS3
                           </span>
                           <span className="px-3 py-1.5 bg-pink-900/30 dark:bg-pink-200 text-pink-400 dark:text-pink-700 rounded text-xs">
-                            🎭 Framer Motion
+                             Framer Motion
                           </span>
                           <span className="px-3 py-1.5 bg-pink-900/30 dark:bg-pink-200 text-pink-400 dark:text-pink-700 rounded text-xs">
-                            🧩 shadcn/ui
+                             shadcn/ui and other ui libraries
                           </span>
                           <span className="px-3 py-1.5 bg-pink-900/30 dark:bg-pink-200 text-pink-400 dark:text-pink-700 rounded text-xs">
-                            📱 Responsive Design
+                             Responsive Design
                           </span>
                         </div>
                       </div>
@@ -482,16 +488,19 @@ export default function TerminalAbout() {
                         </div>
                         <div className="flex flex-wrap gap-2">
                           <span className="px-3 py-1.5 bg-orange-900/30 dark:bg-orange-200 text-orange-400 dark:text-orange-700 rounded text-xs">
-                            📦 Git
+                             Git
                           </span>
                           <span className="px-3 py-1.5 bg-orange-900/30 dark:bg-orange-200 text-orange-400 dark:text-orange-700 rounded text-xs">
-                            🐙 GitHub
+                             GitHub
                           </span>
                           <span className="px-3 py-1.5 bg-orange-900/30 dark:bg-orange-200 text-orange-400 dark:text-orange-700 rounded text-xs">
-                            💻 VS Code
+                             VS Code
                           </span>
                           <span className="px-3 py-1.5 bg-orange-900/30 dark:bg-orange-200 text-orange-400 dark:text-orange-700 rounded text-xs">
-                            📦 npm/yarn
+                             npm/yarn
+                          </span>
+                          <span className="px-3 py-1.5 bg-orange-900/30 dark:bg-orange-200 text-orange-400 dark:text-orange-700 rounded text-xs">
+                             Vercel
                           </span>
                         </div>
                       </div>
