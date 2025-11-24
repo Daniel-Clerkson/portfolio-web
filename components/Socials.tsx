@@ -1,5 +1,6 @@
 import Link from "next/link";
-import { FaGithub, FaLinkedinIn } from "react-icons/fa";
+import { FaGithub, FaLinkedinIn, FaUser } from "react-icons/fa";
+
 
 const Socials = () => {
   return (
@@ -13,6 +14,9 @@ const Socials = () => {
       >
         <FaLinkedinIn className="size-7 cursor-pointer" />
       </Link>
+      <a href="/My_Resume.pdf" download={true}>
+        <FaUser />
+      </a>
     </div>
   );
 };
