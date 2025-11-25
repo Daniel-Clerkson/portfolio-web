@@ -23,6 +23,12 @@
       {
         "name": "ShadCN",
         "color": "bg-black hover:bg-gray-800"
+      },      {
+        "name": "TypeScript",
+        "color": "bg-blue-600 hover:bg-blue-700"
+      },      {
+        "name": "Vercel",
+        "color": "bg-black hover:bg-gray-800"
       }
     ],
     "img": "/uploads/1764002207648-Screenshot-2025-11-24-173203.png",
@@ -65,6 +71,14 @@
       {
         "name": "Markdown",
         "color": "bg-orange-500 hover:bg-orange-600"
+      },
+      {
+        "name": "Vercel",
+        "color": "bg-black hover:bg-gray-800"
+      },
+      {
+        "name": "TypeScript",
+        "color": "bg-blue-600 hover:bg-blue-700"
       }
     ],
     "img": "/uploads/1764002761715-Screenshot-2025-11-24-174351.png",
