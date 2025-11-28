@@ -114,13 +114,13 @@ const ProjectCards: React.FC = () => {
 
             <div className="links flex items-center justify-center gap-3 sm:gap-4 p-4 sm:p-5 md:p-6 border-t border-gray-200 dark:border-0">
               <Link href={`${data.link}`} target="_blank">
-                <button className="flex items-center gap-2 px-4 sm:px-6 py-2 sm:py-2.5 bg-gradient-to-r from-blue-500 to-blue-600 hover:from-blue-600 hover:to-blue-700 text-white rounded-lg font-medium shadow-md hover:shadow-lg transition-all duration-200 transform hover:scale-105">
+                <button className="flex items-center gap-2 cursor:pointer px-4 sm:px-6 py-2 sm:py-2.5 bg-gradient-to-r from-blue-500 to-blue-600 hover:from-blue-600 hover:to-blue-700 text-white rounded-lg font-medium shadow-md hover:shadow-lg transition-all duration-200 transform hover:scale-105">
                   <Eye className="w-4 h-4 sm:w-5 sm:h-5" />
                   <span className="text-sm sm:text-base">Preview</span>
                 </button>
               </Link>
               <Link href={data.source}>
-                <button className="flex items-center gap-2 px-4 sm:px-6 py-2 sm:py-2.5 bg-gray-900 hover:bg-black dark:bg-gray-700 dark:hover:bg-gray-600 text-white rounded-lg font-medium shadow-md hover:shadow-lg transition-all duration-200 transform hover:scale-105">
+                <button className="flex items-center gap-2 cursor:pointer px-4 sm:px-6 py-2 sm:py-2.5 bg-gray-900 hover:bg-black dark:bg-gray-700 dark:hover:bg-gray-600 text-white rounded-lg font-medium shadow-md hover:shadow-lg transition-all duration-200 transform hover:scale-105">
                   <Github className="w-4 h-4 sm:w-5 sm:h-5" />
                   <span className="text-sm sm:text-base">Code</span>
                 </button>
