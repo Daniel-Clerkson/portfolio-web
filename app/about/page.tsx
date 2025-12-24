@@ -322,11 +322,11 @@ export default function TerminalAbout() {
                       delay={1400}
                       className="block mt-4 md:mt-6 p-3 md:p-4 bg-gray-900 dark:bg-gray-100 rounded-lg border border-gray-700 dark:border-gray-300"
                     >
-                      <div className="flex flex-col sm:flex-row items-start gap-3">
-                        <span className="text-2xl md:text-3xl">💼</span>
+                      <div className="flex flex-col sm:flex-row items-start gap-3 m-5">
+                        <span className="text-2xl md:text-3xl">⚛️</span>
                         <div className="flex-1 w-full">
                           <div className="font-bold text-base md:text-lg text-white dark:text-black break-words">
-                           Currently Front-End Developer At ReliAssist
+                           Currently Front-End Developer At ReliAssist (2025+)
                           </div>
                           <div className="text-gray-400 dark:text-gray-600 mt-1 text-xs md:text-sm break-words">
                             Specialized in modern web technologies
@@ -346,9 +346,12 @@ export default function TerminalAbout() {
                             </span>
                           </div>
                         </div>
+                      </div>
+                      <div className="flex flex-col sm:flex-row items-start gap-3 m-5">
+                        <span className="text-2xl md:text-3xl">💼</span>
                         <div className="flex-1 w-full">
                           <div className="font-bold text-base md:text-lg text-white dark:text-black break-words">
-                            Front-End Developer At StemLabs
+                            Front-End Developer At StemLabs (2023 - 2025)
                           </div>
                           <div className="text-gray-400 dark:text-gray-600 mt-1 text-xs md:text-sm break-words">
                             Specialized in modern web technologies
