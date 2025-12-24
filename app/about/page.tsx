@@ -31,11 +31,11 @@ export default function TerminalAbout() {
     const cleanCmd = cmd.trim().toLowerCase();
     setCommandHistory([...commandHistory, cmd]);
 
-    if (cleanCmd === "cd education") setSection("education");
-    else if (cleanCmd === "cd experience") setSection("experience");
-    else if (cleanCmd === "cd about") setSection("about");
-    else if (cleanCmd === "cd skills") setSection("skills");
-    else if (cleanCmd === "cd " || cleanCmd === "cd ~" || cleanCmd === "home")
+    if (cleanCmd === "cd /education" || cleanCmd === "cd education") setSection("education");
+    else if (cleanCmd === "cd /experience" || cleanCmd === "cd experience") setSection("experience");
+    else if (cleanCmd === "cd /about" || cleanCmd === "cd about") setSection("about");
+    else if (cleanCmd === "cd /skills" || cleanCmd === "cd skills") setSection("skills");
+    else if (cleanCmd === "cd /" || cleanCmd === "cd /~" || cleanCmd === "home")
       setSection("home");
     else if (cleanCmd === "clear") setCommandHistory([]);
   };
@@ -102,7 +102,7 @@ export default function TerminalAbout() {
                     <AnimatedSpan delay={1500} className="block ml-2 md:ml-4">
                       <div className="flex flex-col sm:flex-row sm:items-center gap-1 sm:gap-0">
                         <span className="text-cyan-400 dark:text-cyan-600 font-mono text-xs md:text-sm">
-                          cd about
+                          cd /about
                         </span>
                         <span className="text-gray-500 sm:ml-4 text-xs md:text-sm">
                           → Learn about me
@@ -113,7 +113,7 @@ export default function TerminalAbout() {
                     <AnimatedSpan delay={1650} className="block ml-2 md:ml-4">
                       <div className="flex flex-col sm:flex-row sm:items-center gap-1 sm:gap-0">
                         <span className="text-cyan-400 dark:text-cyan-600 font-mono text-xs md:text-sm">
-                          cd education
+                          cd /education
                         </span>
                         <span className="text-gray-500 sm:ml-4 text-xs md:text-sm">
                           → View educational background
@@ -124,7 +124,7 @@ export default function TerminalAbout() {
                     <AnimatedSpan delay={1800} className="block ml-2 md:ml-4">
                       <div className="flex flex-col sm:flex-row sm:items-center gap-1 sm:gap-0">
                         <span className="text-cyan-400 dark:text-cyan-600 font-mono text-xs md:text-sm">
-                          cd experience
+                          cd /experience
                         </span>
                         <span className="text-gray-500 sm:ml-4 text-xs md:text-sm">
                           → View work experience
@@ -135,7 +135,7 @@ export default function TerminalAbout() {
                     <AnimatedSpan delay={1950} className="block ml-2 md:ml-4">
                       <div className="flex flex-col sm:flex-row sm:items-center gap-1 sm:gap-0">
                         <span className="text-cyan-400 dark:text-cyan-600 font-mono text-xs md:text-sm">
-                          cd skills
+                          cd /skills
                         </span>
                         <span className="text-gray-500 sm:ml-4 text-xs md:text-sm">
                           → View technical skills
@@ -167,7 +167,7 @@ export default function TerminalAbout() {
                 {section === "about" && (
                   <div className="space-y-2 sm:space-y-3 md:space-y-4 lg:space-y-6">
                     <TypingAnimation className="text-green-400 dark:text-green-600 text-sm sm:text-base md:text-lg break-words">
-                      $ cd about
+                      $ cd /about
                     </TypingAnimation>
 
                     <AnimatedSpan
@@ -231,7 +231,7 @@ export default function TerminalAbout() {
                       className="mt-4 sm:mt-5 md:mt-6 text-gray-500 dark:text-gray-600 text-xs sm:text-sm md:text-base break-words"
                       delay={1800}
                     >
-                      💡 Tip: Type cd  to return home
+                      💡 Tip: Type cd / to return home
                     </TypingAnimation>
                   </div>
                 )}
@@ -243,7 +243,7 @@ export default function TerminalAbout() {
                       className="text-green-400 dark:text-green-600 text-sm md:text-base break-words"
                       delay={0}
                     >
-                      $ cd education
+                      $ cd /education
                     </TypingAnimation>
 
                     <AnimatedSpan
@@ -289,7 +289,7 @@ export default function TerminalAbout() {
                       className="mt-4 md:mt-6 text-gray-500 dark:text-gray-600 text-xs md:text-sm break-words"
                       delay={2400}
                     >
-                      💡 Tip: Type cd  to return home
+                      💡 Tip: Type cd / to return home
                     </TypingAnimation>
                   </div>
                 )}
@@ -301,7 +301,7 @@ export default function TerminalAbout() {
                       className="text-green-400 dark:text-green-600 text-sm md:text-base break-words"
                       delay={0}
                     >
-                      $ cd experience
+                      $ cd /experience
                     </TypingAnimation>
 
                     <AnimatedSpan
@@ -406,7 +406,7 @@ export default function TerminalAbout() {
                       className="mt-4 md:mt-6 text-gray-500 dark:text-gray-600 text-xs md:text-sm break-words"
                       delay={2800}
                     >
-                      💡 Tip: Type cd  to return home
+                      💡 Tip: Type cd / to return home
                     </TypingAnimation>
                   </div>
                 )}
@@ -418,7 +418,7 @@ export default function TerminalAbout() {
                       className="text-green-400 dark:text-green-600 text-sm md:text-base break-words"
                       delay={0}
                     >
-                      $ cd skills
+                      $ cd /skills
                     </TypingAnimation>
 
                     <AnimatedSpan
@@ -549,7 +549,7 @@ export default function TerminalAbout() {
                       className="mt-4 md:mt-6 text-gray-500 dark:text-gray-600 text-xs md:text-sm break-words"
                       delay={3400}
                     >
-                      💡 Tip: Type cd  to return home
+                      💡 Tip: Type cd / to return home
                     </TypingAnimation>
                   </div>
                 )}
