@@ -23,10 +23,14 @@ const Hero = () => {
                   </Highlighter>
                 </span>
               </h1>
+              <h1 className="leading-tight mt-4 sm:mt-5">
+                Based In{" "}
+                <Highlighter action="highlight" color="#82de94">
+                  Nigeria
+                </Highlighter>
+              </h1>
               <div className="btn mt-6 sm:mt-8 md:mt-10 flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-4">
-                <Link
-                
-                href="./work">
+                <Link href="./work">
                   <RainbowButton
                     variant="outline"
                     size="lg"
@@ -35,9 +39,7 @@ const Hero = () => {
                     View My Work
                   </RainbowButton>
                 </Link>
-                <Link
-                href="./contact"
-                >
+                <Link href="./contact">
                   <RainbowButton
                     size="lg"
                     className="text-base sm:text-lg md:text-xl w-full sm:w-auto px-6 sm:px-8 hover:shadow-2xl dark:hover:shadow-purple-500/20 transition-shadow duration-300"
