@@ -112,11 +112,9 @@ const Navbar = () => {
             </div>
           ))}
 
-          <AnimatedThemeToggler />
         </div>
 
         <div className="md:hidden flex items-center gap-3">
-          <AnimatedThemeToggler />
           <button
             className="p-2 text-black dark:text-white focus:outline-none z-60 text-3xl font-light"
             onClick={toggleMenu}
