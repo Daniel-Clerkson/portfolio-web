@@ -39,7 +39,6 @@ const ProjectCards: React.FC = () => {
       }
 
       const response: Project[] = await res.json();
-      console.log(response);
       setDataVal(response);
     } catch (error) {
       console.error(error);
