@@ -23,10 +23,12 @@
       {
         "name": "ShadCN",
         "color": "bg-black hover:bg-gray-800"
-      },      {
+      },
+      {
         "name": "TypeScript",
         "color": "bg-blue-600 hover:bg-blue-700"
-      },      {
+      },
+      {
         "name": "Vercel",
         "color": "bg-black hover:bg-gray-800"
       }
@@ -234,5 +236,39 @@
     "img": "/uploads/1764004995205-Screenshot-2025-11-24-181932.png",
     "source": "https://github.com/Daniel-Clerkson/portfolio-web",
     "link": "https://portfolio-web-eight-green.vercel.app/"
+  },
+  {
+    "id": "0d51586f-12f5-469f-850f-2e4544fd0eef",
+    "title": "Sanctuary",
+    "description": "A full-stack church web app for teens with member authentication, onboarding flows, and a clean UI. Built for real congregational use.",
+    "technologies": [
+      {
+        "name": "Next.js",
+        "color": "bg-black hover:bg-gray-800"
+      },
+      {
+        "name": "TailwindCSS",
+        "color": "bg-cyan-500 hover:bg-cyan-600"
+      },
+      {
+        "name": "ReactJS",
+        "color": "bg-blue-600 hover:bg-blue-700"
+      },
+      {
+        "name": "Supabase",
+        "color": "bg-green-600 hover:bg-green-700"
+      },
+      {
+        "name": "NextAuth for Auth",
+        "color": "bg-black hover:bg-gray-800"
+      },
+      {
+        "name": "Vercel",
+        "color": "bg-black hover:bg-gray-800"
+      }
+    ],
+    "img": "/uploads/1773229985761-Screenshot-From-2026-03-11-12-50-17.png",
+    "source": "https://github.com/Daniel-Clerkson/sanctuary",
+    "link": "https://blw-teens-kano.vercel.app/"
   }
 ]
