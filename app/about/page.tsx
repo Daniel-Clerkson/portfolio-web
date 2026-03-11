@@ -20,7 +20,6 @@ export default function MinimalistAbout() {
         {/* Header */}
         <div className="mb-12 md:mb-16">
           <div className="flex flex-col md:flex-row md:items-center gap-6 md:gap-8">
-            {/* Profile Image */}
             <div className="w-24 h-24 md:w-32 md:h-32 rounded-full bg-gradient-to-br from-green-500 to-indigo-600 p-0.5 flex-shrink-0">
               <div className="w-full h-full rounded-full bg-gray-200 dark:bg-gray-800 overflow-hidden">
                 <Image 
@@ -73,23 +72,20 @@ export default function MinimalistAbout() {
 
         {/* Content Area */}
         <div className="py-6 md:py-8">
-          {/* About Tab */}
+          {/* About Tab — UPDATED BIO */}
           {activeTab === "about" && (
             <div className="space-y-4 md:space-y-6 animate-fadeIn">
               <div className="prose dark:prose-invert max-w-none">
                 <p className="text-base md:text-lg text-gray-700 dark:text-gray-300 leading-relaxed">
-                  I'm a front-end developer focused on building clean, functional web experiences. 
-                  I work primarily with <span className="text-blue-600 dark:text-blue-400 font-medium">React and Next.js</span>, and I'm drawn to projects where design 
-                  and engineering come together to solve real problems.
+                  I'm a front-end developer based in Kano, Nigeria, building clean and functional web experiences with{" "}
+                  <span className="text-blue-600 dark:text-blue-400 font-medium">React and Next.js</span>.
+                  I've shipped real production apps — from church platforms to company sites — and I care about the details that make interfaces actually feel good to use.
                 </p>
                 <p className="text-base md:text-lg text-gray-700 dark:text-gray-300 leading-relaxed">
-                  Currently studying Software Engineering at Bayero University while working on 
-                  production applications. I'm interested in performance optimization, accessible 
-                  interfaces, and the small details that make products feel polished.
+                  Beyond the frontend, I'm deep into Linux, bash scripting, and Python — I like understanding how things work under the hood, not just on the surface.
                 </p>
                 <p className="text-base md:text-lg text-gray-700 dark:text-gray-300 leading-relaxed">
-                  When I'm not coding, I'm usually exploring new tools, reading technical documentation, 
-                  or thinking about ways to improve user workflows.
+                  Currently a Software Engineering student at Bayero University, interning as a frontend lead, and always building something on the side.
                 </p>
               </div>
             </div>
@@ -117,7 +113,6 @@ export default function MinimalistAbout() {
           {/* Experience Tab */}
           {activeTab === "experience" && (
             <div className="space-y-8 md:space-y-12 animate-fadeIn">
-              {/* Current Position */}
               <div className="border-l-4 border-blue-600 dark:border-blue-400 pl-4">
                 <div className="flex flex-col sm:flex-row sm:items-baseline sm:justify-between gap-1 sm:gap-0 mb-2">
                   <h3 className="text-lg md:text-xl font-semibold text-gray-900 dark:text-white">
@@ -146,7 +141,6 @@ export default function MinimalistAbout() {
                 </div>
               </div>
 
-              {/* Previous Position */}
               <div className="border-l-4 border-gray-300 dark:border-gray-600 pl-4">
                 <div className="flex flex-col sm:flex-row sm:items-baseline sm:justify-between gap-1 sm:gap-0 mb-2">
                   <h3 className="text-lg md:text-xl font-semibold text-gray-900 dark:text-white">
@@ -174,7 +168,6 @@ export default function MinimalistAbout() {
                   ))}
                 </div>
                 
-                {/* Projects */}
                 <div className="bg-gray-50 dark:bg-gray-800/50 rounded-lg p-4 mt-4">
                   <p className="text-sm font-medium text-gray-900 dark:text-white mb-2">
                     Selected Projects
@@ -190,10 +183,9 @@ export default function MinimalistAbout() {
             </div>
           )}
 
-          {/* Skills Tab */}
+          {/* Skills Tab — UPDATED */}
           {activeTab === "skills" && (
             <div className="space-y-8 md:space-y-10 animate-fadeIn">
-              {/* Frontend */}
               <div>
                 <h3 className="text-base md:text-lg font-semibold text-gray-900 dark:text-white mb-3 md:mb-4">
                   Frontend Development
@@ -210,7 +202,23 @@ export default function MinimalistAbout() {
                 </div>
               </div>
 
-              {/* Styling */}
+              {/* NEW: Backend & Database */}
+              <div>
+                <h3 className="text-base md:text-lg font-semibold text-gray-900 dark:text-white mb-3 md:mb-4">
+                  Backend & Database
+                </h3>
+                <div className="flex flex-wrap gap-2">
+                  {["Supabase", "PostgreSQL", "REST APIs", "GraphQL"].map((skill) => (
+                    <span
+                      key={skill}
+                      className="text-xs md:text-sm text-emerald-700 dark:text-emerald-300 bg-emerald-50 dark:bg-emerald-900/20 border border-emerald-200 dark:border-emerald-800 px-3 md:px-4 py-1.5 md:py-2 rounded"
+                    >
+                      {skill}
+                    </span>
+                  ))}
+                </div>
+              </div>
+
               <div>
                 <h3 className="text-base md:text-lg font-semibold text-gray-900 dark:text-white mb-3 md:mb-4">
                   Styling & UI
@@ -227,13 +235,12 @@ export default function MinimalistAbout() {
                 </div>
               </div>
 
-              {/* Tools */}
               <div>
                 <h3 className="text-base md:text-lg font-semibold text-gray-900 dark:text-white mb-3 md:mb-4">
                   Tools & Workflow
                 </h3>
                 <div className="flex flex-wrap gap-2">
-                  {["Git", "GitHub", "VS Code", "npm/yarn", "Vercel"].map((skill) => (
+                  {["Git", "GitHub", "VS Code", "npm/yarn", "Vercel", "Linux", "Bash"].map((skill) => (
                     <span
                       key={skill}
                       className="text-xs md:text-sm text-gray-700 dark:text-gray-300 bg-gray-100 dark:bg-gray-800 px-3 md:px-4 py-1.5 md:py-2 rounded"
@@ -244,7 +251,7 @@ export default function MinimalistAbout() {
                 </div>
               </div>
 
-              {/* Learning */}
+              {/* UPDATED: Currently Exploring */}
               <div className="pt-6 border-t border-gray-200 dark:border-gray-700">
                 <h3 className="text-base md:text-lg font-semibold text-gray-900 dark:text-white mb-3 md:mb-4">
                   Currently Exploring
@@ -252,15 +259,15 @@ export default function MinimalistAbout() {
                 <ul className="space-y-2 text-sm md:text-base text-gray-700 dark:text-gray-300">
                   <li className="flex items-start gap-2">
                     <span className="text-blue-600 dark:text-blue-400 mt-1">→</span>
-                    <span>Advanced React patterns and performance optimization</span>
+                    <span>Python scripting & automation</span>
                   </li>
                   <li className="flex items-start gap-2">
                     <span className="text-blue-600 dark:text-blue-400 mt-1">→</span>
-                    <span>Backend development with Node.js</span>
+                    <span>Linux & bash</span>
                   </li>
                   <li className="flex items-start gap-2">
                     <span className="text-blue-600 dark:text-blue-400 mt-1">→</span>
-                    <span>Cloud deployment and DevOps fundamentals</span>
+                    <span>Systems thinking & DevOps</span>
                   </li>
                 </ul>
               </div>
@@ -271,14 +278,8 @@ export default function MinimalistAbout() {
 
       <style>{`
         @keyframes fadeIn {
-          from {
-            opacity: 0;
-            transform: translateY(10px);
-          }
-          to {
-            opacity: 1;
-            transform: translateY(0);
-          }
+          from { opacity: 0; transform: translateY(10px); }
+          to { opacity: 1; transform: translateY(0); }
         }
         .animate-fadeIn {
           animation: fadeIn 0.3s ease-out;
