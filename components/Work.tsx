@@ -7,7 +7,7 @@ const Works = () => {
   useEffect(() => {
     setLoading(false);
     const fetchData = async () => {
-      const res = await fetch("http://localhost:3000/api");
+      const res = await fetch("/api");
       const data = await res.json();
       setProjects(data);
     };
