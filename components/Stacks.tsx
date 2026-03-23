@@ -4,12 +4,12 @@ const Stacks = () => {
   const arsenal = [
     { category: "FRONTEND", tech: "React / Next.js" },
     { category: "STYLING", tech: "Tailwind CSS" },
-    { category: "BACKEND", tech: "Supabase / Node" },
+    { category: "BACKEND", tech: "Supabase" },
     { category: "API", tech: "GraphQL / REST" },
-    { category: "LANGUAGES", tech: "TypeScript / Go" },
-    { category: "INFRASTRUCTURE", tech: "Vercel / Docker" },
-    { category: "DESIGN", tech: "Figma / Adobe" },
-    { category: "WORKFLOW", tech: "Agile / Git" },
+    { category: "LANGUAGES", tech: "TypeScript / JavaScript" },
+    { category: "INFRASTRUCTURE", tech: "Vercel / Netlify" },
+    { category: "DESIGN", tech: "Figma" },
+    { category: "WORKFLOW", tech: "Github / Git" },
   ];
 
   return (
