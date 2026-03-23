@@ -1,58 +1,31 @@
-import { Highlighter } from "@/components/ui/highlighter";
-import { RainbowButton } from "./ui/rainbow-button";
 import Link from "next/link";
+import { BiRightArrowAlt } from "react-icons/bi";
 
 const Hero = () => {
   return (
-    <>
-      <div className="main flex items-center justify-center h-full w-full min-h-[70vh] px-4 sm:px-6 lg:px-8bg-transparent transition-colors duration-300">
-        <div className="heading text-center max-w-5xl mx-auto">
-          <div className="head">
-            <div className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl text-black dark:text-white">
-              <h1 className="mb-4 sm:mb-5 leading-tight">
-                Hi, I am{" "}
-                <Highlighter action="underline" color="#FF9800">
-                  Daniel{" "}
-                </Highlighter>{" "}
-              </h1>
-              <h1 className="leading-tight">
-                A{" "}
-                <span className="inline-block">
-                  <Highlighter action="highlight" color="#87CEFA">
-                    Front-End Developer
-                  </Highlighter>
-                </span>
-              </h1>
-              <h1 className="leading-tight mt-4 sm:mt-5">
-                Based In{" "}
-                <Highlighter action="highlight" color="#82de94">
-                  Nigeria
-                </Highlighter>
-              </h1>
-              <div className="btn mt-6 sm:mt-8 md:mt-10 flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-4">
-                <Link href="./work">
-                  <RainbowButton
-                    variant="outline"
-                    size="lg"
-                    className="text-base sm:text-lg md:text-xl w-full sm:w-auto px-6 sm:px-8 hover:shadow-2xl dark:hover:shadow-blue-500/20 transition-shadow duration-300"
-                  >
-                    View My Work
-                  </RainbowButton>
-                </Link>
-                <Link href="./contact">
-                  <RainbowButton
-                    size="lg"
-                    className="text-base sm:text-lg md:text-xl w-full sm:w-auto px-6 sm:px-8 hover:shadow-2xl dark:hover:shadow-purple-500/20 transition-shadow duration-300"
-                  >
-                    Get In Touch{" "}
-                  </RainbowButton>
-                </Link>
-              </div>
-            </div>
-          </div>
+    <div className="main flex flex-col md:flex-row justify-between items-start md:items-center min-h-[80vh] p-5 mb-20">
+      <div className="left flex flex-col justify-between h-full w-full md:w-auto">
+        <div className="head mt-16 md:mt-20">
+          <h1 className="text-6xl sm:text-7xl md:text-9xl font-black red leading-none">DANIEL</h1>
+          <h1 className="text-6xl sm:text-7xl md:text-9xl font-black leading-none">CLERKSON</h1>
+        </div>
+        <div className="sub inter mt-6 md:mt-10 text-base md:text-lg">
+          <p>
+            17 | Frontend developer | Building things that make people ask,{" "}
+            <span className="italic red font-bold">"who made this?"</span>
+          </p>
         </div>
       </div>
-    </>
+
+      <div className="right flex items-end mt-8 md:mt-0 md:h-full self-start md:self-end">
+        <Link href="#contact">
+          <button className="group relative cursor-pointer flex items-center shadow-[6px_6px_0px_0px_rgba(255,60,46,1)] hover:shadow-none gap-3 bg-black hover:bg-[#ff3c2e] text-white px-8 py-4 font-black text-sm tracking-widest transition-all">
+            LET'S WORK
+            <BiRightArrowAlt className="text-2xl transition-transform group-hover:translate-x-2" />
+          </button>
+        </Link>
+      </div>
+    </div>
   );
 };
 

@@ -1,167 +1,109 @@
 "use client";
-import { PointerHighlight } from "./ui/pointer-highlight";
-import { TypewriterEffect } from "./ui/typewriter-effect";
-import { usePathname } from "next/navigation";
-import { useEffect, useState } from "react";
+
 import Link from "next/link";
-import { IoCodeSharp, IoCodeSlash, IoMoon, IoSunny } from "react-icons/io5";
-import { AnimatedThemeToggler } from "./ui/animated-theme-toggler";
+import React, { useState, useEffect } from "react";
+import { Menu, X } from "lucide-react";
 
 const Navbar = () => {
-  const navData = [
-    [
-      "Work",
-      "/work",
-      "bg-blue-100 dark:bg-blue-900 border border-blue-300 dark:border-blue-700",
-      "text-blue-500 h-3 w-3",
-    ],
-    [
-      "About",
-      "/about",
-      "bg-green-100 dark:bg-green-900 border border-green-300 dark:border-green-700",
-      "text-green-500 h-3 w-3",
-    ],
-    [
-      "Contact",
-      "/contact",
-      "bg-purple-100 dark:bg-purple-900 border border-purple-300 dark:border-purple-700",
-      "text-purple-500 h-3 w-3",
-    ],
-  ];
-
-  const pathname = usePathname();
-  const [headerShadow, setHeaderShadow] = useState(false);
-  const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const [isDarkMode, setIsDarkMode] = useState(false);
-
-  const c = () => {
-    if (pathname == "/contact") {
-      return "text-purple-500 dark:text-purple-500 text-2xl";
-    } else if (pathname == "/about") {
-      return "text-green-500 dark:text-green-500 text-2xl";
-    } else {
-      return "text-blue-500 dark:text-blue-500 text-2xl";
-    }
-  };
-
-  const words = [
-    {
-      text: "Daniel",
-      className: "text-2xl",
-    },
-    {
-      text: "Clerkson.",
-      className: c(),
-    },
-  ];
+  const [isScrolled, setIsScrolled] = useState(false);
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   useEffect(() => {
-    const addHeaderShadow = () => {
-      window.scrollY >= 1 ? setHeaderShadow(true) : setHeaderShadow(false);
+    const handleScroll = () => {
+      setIsScrolled(window.scrollY > 20);
     };
-    window.addEventListener("scroll", addHeaderShadow);
-    setIsMenuOpen(false);
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
-    return () => {
-      window.removeEventListener("scroll", addHeaderShadow);
-    };
-  }, [pathname]);
+  useEffect(() => {
+    document.body.style.overflow = mobileMenuOpen ? "hidden" : "unset";
+  }, [mobileMenuOpen]);
 
-
-  const toggleMenu = () => setIsMenuOpen((prev) => !prev);
+  const navLinks = [
+    { name: "WORK", href: "#work" },
+    { name: "ABOUT", href: "#about" },
+    { name: "STACK", href: "#stacks" },
+    { name: "CONTACT", href: "#contact" },
+  ];
 
   return (
-    <div
-      className={`flex justify-center w-full mt-10 sticky transition-all z-50  ${
-        headerShadow ? "top-0 md:top-10" : "top-0 "
-      }`}
-    >
-      <div
-        className={` text-black dark:text-white flex items-center justify-between p-5 mx-auto ${
-          headerShadow ? "scrolled" : "no"
-        }`}
+    <>
+      <nav
+        className={`fixed top-0 left-0 w-full z-[100] transition-all duration-500 px-6 py-5 md:px-10
+        ${isScrolled || mobileMenuOpen ? "bg-white border-b border-gray-100 py-4" : "bg-transparent"}`}
       >
-        <div className="logo">
-          <Link href="./">
-            <TypewriterEffect
-              cursorClassName="hidden"
-              words={words}
-            ></TypewriterEffect>
-          </Link>
-        </div>
+        <div className="max-w-[1400px] mx-auto grid grid-cols-2 md:grid-cols-3 items-center">
+          <div className="flex justify-start z-[110]">
+            <Link href="/" onClick={() => setMobileMenuOpen(false)}>
+              <h1 className="text-xl font-black tracking-tighter uppercase leading-none hover:opacity-70 transition-opacity">
+                Daniel Clerkson
+              </h1>
+            </Link>
+          </div>
 
-        <div className="hidden md:flex links justify-between items-center gap-4">
-          {navData.map(([title, url, rectangleClass, pointerClass]) => (
-            <div key={title} className="relative group">
-              <PointerHighlight
-                rectangleClassName={`opacity-0 group-hover:opacity-100 transition-all duration-300 ease-out leading-loose ${rectangleClass} ${
-                  pathname == url ? "opacity-100" : "opacity-0"
-                }`}
-                pointerClassName={`opacity-0 group-hover:opacity-100 transition-all duration-300 ${pointerClass} ${
-                  pathname == url ? "opacity-100" : "opacity-0"
-                }`}
-                containerClassName="inline-block"
-              >
+          <div className="hidden md:flex justify-center items-center">
+            {navLinks.map((link) => (
+              <div key={link.name} className="group mr-6">
                 <Link
-                  href={url}
-                  className="relative z-10 px-4 py-2 text-lg font-extralight tracking-wide transition-all duration-300 group-hover:scale-105"
+                  href={link.href}
+                  className=" font-bold  hover:text-[#ff3c2e] transition-colors"
                 >
-                  {title}
+                  {link.name}
                 </Link>
-              </PointerHighlight>
-            </div>
-          ))}
-
-        </div>
-
-        <div className="md:hidden flex items-center gap-3">
-          <button
-            className="p-2 text-black dark:text-white focus:outline-none z-60 text-3xl font-light"
-            onClick={toggleMenu}
-            aria-label="Toggle navigation menu"
-          >
-            {isMenuOpen ? (
-              <IoCodeSlash
-                className={`w-6 h-6 transform transition-transform duration-300 ${c()}`}
-              />
-            ) : (
-              <IoCodeSharp
-                className={`w-6 h-6 transform transition-transform duration-300 ${c()}`}
-              />
-            )}
-          </button>
-        </div>
-
-        <div
-          className={`fixed top-0 left-0 md:hidden w-3/4 max-w-sm h-screen bg-white dark:bg-gray-900 shadow-xl transition-transform duration-300 z-50 overflow-y-auto ${
-            isMenuOpen ? "translate-x-0" : "-translate-x-full"
-          }`}
-        >
-          <div className="pt-24 h-[80vh] justify-center items-center gap-5 flex flex-col px-8">
-            {navData.map(([title, url, rectangleClass, pointerClass]) => (
-              <div key={title} className="relative group">
-                <PointerHighlight
-                  rectangleClassName={`opacity-0 group-hover:opacity-100 transition-all duration-300 ease-out leading-loose ${rectangleClass} ${
-                    pathname == url ? "opacity-100" : "opacity-0"
-                  }`}
-                  pointerClassName={`opacity-0 group-hover:opacity-100 transition-all duration-300 ${pointerClass} ${
-                    pathname == url ? "opacity-100" : "opacity-0"
-                  }`}
-                  containerClassName="inline-block"
-                >
-                  <Link
-                    href={url}
-                    className="relative z-10 px-4 py-2 text-lg font-extralight tracking-wide transition-all duration-300 group-hover:scale-105"
-                  >
-                    {title}
-                  </Link>
-                </PointerHighlight>
+                <div className="h-0.5 w-0 bg-[#ff3c2e] transition-all group-hover:w-full"></div>
               </div>
             ))}
           </div>
+
+          <div className="flex justify-end items-center z-[110]">
+            <Link href="#contact" className="hidden md:block">
+              <button className="relative border-2 border-black bg-white px-8 py-3 font-black tracking-widest uppercase transition-all duration-200 hover:bg-[#ff3c2e] cursor-pointer hover:text-white active:translate-x-[2px] active:translate-y-[2px] shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] hover:shadow-none">
+                Get in touch
+              </button>
+            </Link>
+
+            {/* MOBILE TOGGLE with X */}
+            <button
+              onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+              className="md:hidden p-2 text-black transition-all"
+            >
+              {mobileMenuOpen ? (
+                <X size={28} strokeWidth={3} />
+              ) : (
+                <Menu size={28} strokeWidth={3} />
+              )}
+            </button>
+          </div>
         </div>
+      </nav>
+
+      {/* MOBILE OVERLAY */}
+      <div
+        className={`fixed inset-0 bg-white z-[90] flex flex-col items-center justify-center gap-10 transition-transform duration-500 ease-in-out md:hidden
+        ${mobileMenuOpen ? "translate-y-0" : "-translate-y-full"}`}
+      >
+        {navLinks.map((link) => (
+          <Link
+            key={link.name}
+            href={link.href}
+            onClick={() => setMobileMenuOpen(false)}
+            className="text-5xl font-black tracking-tighter hover:text-[#ff3c2e] transition-colors"
+          >
+            {link.name}
+          </Link>
+        ))}
+        <Link
+          href="#contact"
+          onClick={() => setMobileMenuOpen(false)}
+          className="mt-4"
+        >
+          <button className="border-2 border-black bg-black text-white px-10 py-5 text-sm font-black tracking-widest uppercase shadow-[6px_6px_0px_0px_rgba(255,60,46,1)] active:shadow-none transition-all">
+            CONTACT ME
+          </button>
+        </Link>
       </div>
-    </div>
+    </>
   );
 };
 
