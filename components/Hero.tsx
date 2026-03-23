@@ -9,7 +9,7 @@ const Hero = () => {
           <h1 className="text-6xl sm:text-7xl md:text-9xl font-black red leading-none">DANIEL</h1>
           <h1 className="text-6xl sm:text-7xl md:text-9xl font-black leading-none">CLERKSON</h1>
         </div>
-        <div className="sub inter mt-6 md:mt-10 text-base md:text-lg">
+        <div className="sub inter mt-20 md:mt-10 text-base md:text-lg">
           <p>
             17 | Frontend developer | Building things that make people ask,{" "}
             <span className="italic red font-bold">"who made this?"</span>

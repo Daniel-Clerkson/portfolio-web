@@ -17,9 +17,9 @@ const Works = () => {
 
   return (
     <div className="p-10 mt-10">
-      <div className="flex items-center justify-between mb-10">
+      <div className="flex items-end md:items-center justify-between mb-10">
         <h2 className="text-5xl font-black uppercase">Selected Works</h2>
-        <span className="red font-mono tracking-widest">01 // PROJECTS</span>
+        <p className="red font-mono tracking-widest text-[10px]">01 // PROJECTS</p>
       </div>
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
