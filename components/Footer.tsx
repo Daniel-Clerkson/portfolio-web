@@ -23,9 +23,9 @@ const Footer = () => {
             {/* Social Links */}
             <div className="flex flex-wrap gap-4 md:gap-6 text-xs md:text-sm font-black tracking-widest uppercase">
                 <Link href="mailto:danielclerkson68@gmail.com" className='hover:text-[#ff3c2e] transition-colors'>EMAIL</Link>
-                <Link href="www.linkedin.com/in/
+                <Link href="https://www.linkedin.com/in/
 daniel-clerkson-80335a33b" target="_blank" className='hover:text-[#ff3c2e] transition-colors'>LINKEDIN</Link>
-                <Link href="www.github.com/Daniel-Clerkson" target="_blank" className='hover:text-[#ff3c2e] transition-colors'>GITHUB</Link>
+                <Link href="https://www.github.com/Daniel-Clerkson" target="_blank" className='hover:text-[#ff3c2e] transition-colors'>GITHUB</Link>
                 <Link href="#" download="true" className='hover:text-[#ff3c2e] transition-colors'>READ.CV</Link>
             </div>
             
