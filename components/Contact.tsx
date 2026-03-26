@@ -37,7 +37,8 @@ const Contact = () => {
         {/* Social Links */}
         <div className="mt-12 flex items-center gap-8 text-xs sm:text-sm font-bold tracking-[0.2em] uppercase">
           <Link 
-            href="https://linkedin.com" 
+            href="www.linkedin.com/in/
+daniel-clerkson-80335a33b" 
             target="_blank"
             className="text-gray-500 hover:text-black transition-colors relative group"
           >
@@ -46,7 +47,7 @@ const Contact = () => {
           </Link>
           
           <Link 
-            href="https://github.com" 
+            href="www.github.com/Daniel-Clerkson" 
             target="_blank"
             className="text-gray-500 hover:text-black transition-colors relative group"
           >
