@@ -2,6 +2,7 @@
 
 import About from "@/components/About";
 import Contact from "@/components/Contact";
+import Experience from "@/components/Experience";
 import Footer from "@/components/Footer";
 import Hero from "@/components/Hero";
 import Marquee from "@/components/Marquee";
@@ -18,7 +19,12 @@ const page = () => {
       <section id="about">
         <About />
       </section>
-      <Work />
+      <section id="experience">
+        <Experience />
+      </section>
+      <section id="work">
+        <Work />
+      </section>
       <section id="stacks">
         <Stacks />
       </section>

@@ -21,9 +21,9 @@ const Navbar = () => {
   }, [mobileMenuOpen]);
 
   const navLinks = [
-    { name: "WORK", href: "#work" },
     { name: "ABOUT", href: "#about" },
-    { name: "STACK", href: "#stacks" },
+    { name: "WORKS", href: "#work" },
+    { name: "STACKS", href: "#stacks" },
     { name: "CONTACT", href: "#contact" },
   ];
 
