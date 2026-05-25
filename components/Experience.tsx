@@ -1,40 +1,51 @@
-import React from 'react'
+import React from "react";
 
 const experiences = [
   {
-    company: 'ReliAssist',
-    role: 'Lead Frontend Developer',
-    year: '2024 – Present',
+    company: "TravelRTT",
+    role: "Frontend Developer",
+    year: "2026 – Present",
     bullets: [
-      'Leading frontend development on the core product as the only frontend engineer on a ~10-person team.',
-      'Integrated a headless Hashnode CMS with GraphQL and Next.js App Router for the company\'s public site.',
-      'Shipped production-ready UI components using React, Tailwind CSS, and Shadcn/UI.',
+      "Built and shipped multiple pages and features across the core product, serving as the sole frontend engineer on a ~10-person team.",
+      "Collaborated closely with the backend developer to integrate and consume APIs, translating backend data into clean, functional UI.",
+      "Integrated a headless Hashnode CMS using GraphQL and Next.js App Router to power the company's public-facing site.",
+      "Delivered production-ready UI components with React, Tailwind CSS, and Shadcn/UI, supporting both internal and customer-facing workflows",
     ],
   },
   {
-    company: 'STEMLabsNG',
-    role: 'Frontend Developer Intern',
-    year: '2023 – 2024',
+    company: "ReliAssist",
+    role: "Lead Frontend Developer",
+    year: "2024 – Present",
     bullets: [
-      'Built and maintained frontend interfaces as part of the engineering team.',
-      'Gained hands-on experience with React, component architecture, and real-world shipping cycles.',
+      "Leading frontend development on the core product as the only frontend engineer on a ~10-person team.",
+      "Integrated a headless Hashnode CMS with GraphQL and Next.js App Router for the company's public site.",
+      "Shipped production-ready UI components using React, Tailwind CSS, and Shadcn/UI.",
     ],
   },
   {
-    company: 'Freelance // Independent',
-    role: 'Frontend Developer',
-    year: '2022 – Present',
+    company: "STEMLabsNG",
+    role: "Frontend Developer Intern",
+    year: "2023 – 2024",
     bullets: [
-      'Built Sanctuary — a full-stack church platform with Next.js, Supabase, and Google OAuth.',
-      'Developed BLW Teens Kano, a React/Supabase app with sermon library, events, and note-taking features.',
-      'Designed and shipped multiple client projects focused on performance, clean UI, and fast delivery.',
+      "Built and maintained frontend interfaces as part of the engineering team.",
+      "Gained hands-on experience with React, component architecture, and real-world shipping cycles.",
     ],
   },
-]
+  {
+    company: "Freelance // Independent",
+    role: "Frontend Developer",
+    year: "2022 – Present",
+    bullets: [
+      "Built Sanctuary — a full-stack church platform with Next.js, Supabase, and Google OAuth.",
+      "Developed BLW Teens Kano, a React/Supabase app with sermon library, events, and note-taking features.",
+      "Designed and shipped multiple client projects focused on performance, clean UI, and fast delivery.",
+    ],
+  },
+];
 
 const Experience = () => {
   return (
-    <div className='mt-10 p-10 min-h-[90vh] flex flex-col md:flex-row gap-10 md:gap-20 items-start'>
+    <div className="mt-10 p-10 min-h-[90vh] flex flex-col md:flex-row gap-10 md:gap-20 items-start">
       <div className="left md:w-2/5 md:sticky md:top-10">
         <h1 className="text-6xl md:text-8xl font-black leading-none">MY</h1>
         <h1 className="text-6xl md:text-8xl font-black leading-none">EXPERI</h1>
@@ -58,8 +69,13 @@ const Experience = () => {
             </div>
             <div className="flex flex-col gap-1.5">
               {exp.bullets.map((b, j) => (
-                <div key={j} className="flex gap-2 items-start text-sm text-gray-600 leading-relaxed">
-                  <span className="text-[#ff3c2e] font-bold shrink-0 mt-0.5">/</span>
+                <div
+                  key={j}
+                  className="flex gap-2 items-start text-sm text-gray-600 leading-relaxed"
+                >
+                  <span className="text-[#ff3c2e] font-bold shrink-0 mt-0.5">
+                    /
+                  </span>
                   <span>{b}</span>
                 </div>
               ))}
@@ -68,7 +84,7 @@ const Experience = () => {
         ))}
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default Experience
+export default Experience;
