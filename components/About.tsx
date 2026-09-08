@@ -12,7 +12,7 @@ const About = () => {
 
         <div className="relative w-full max-w-sm">
           {/* offset red block behind image — brutalist frame, no rounding */}
-          <div className="absolute top-3 left-3 w-full h-full bg-[#ff3c2e] -z-10" />
+          <div className="absolute top-3 left-3 w-full h-full bg-[#ff3c2e] -z-10-10" />
           <img
             src="/me.png"
             alt="Daniel Clerkson"
