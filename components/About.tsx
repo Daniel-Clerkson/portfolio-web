@@ -3,11 +3,22 @@ import React from 'react'
 const About = () => {
   return (
     <div className='mt-10 p-10 min-h-[90vh] bg-gray-50 flex flex-col md:flex-row gap-10 md:gap-20 items-center'>
-      
-      <div className="left md:w-1/2">
-        <h1 className="text-6xl md:text-7xl font-black leading-none">NOT YOUR</h1>
-        <h1 className="text-6xl md:text-7xl font-black leading-none">AVERAGE</h1>
-        <h1 className="text-6xl md:text-7xl font-black leading-none">DEV.</h1>
+      <div className="left md:w-1/2 flex flex-col gap-10">
+        <div>
+          <h1 className="text-6xl md:text-7xl font-black leading-none">NOT YOUR</h1>
+          <h1 className="text-6xl md:text-7xl font-black leading-none">AVERAGE</h1>
+          <h1 className="text-6xl md:text-7xl font-black leading-none">DEV.</h1>
+        </div>
+
+        <div className="relative w-full max-w-sm">
+          {/* offset red block behind image — brutalist frame, no rounding */}
+          <div className="absolute top-3 left-3 w-full h-full bg-[#ff3c2e] -z-10" />
+          <img
+            src="/me.png"
+            alt="Daniel Clerkson"
+            className="w-full aspect-[4/5] object-cover grayscale contrast-125 border-2 border-black"
+          />
+        </div>
       </div>
 
       <div className="right md:w-1/2 flex flex-col justify-between h-full gap-10">
@@ -35,7 +46,6 @@ const About = () => {
           </div>
         </div>
       </div>
-
     </div>
   )
 }
